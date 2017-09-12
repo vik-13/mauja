@@ -3,8 +3,12 @@ function Decoration() {
 }
 
 Decoration.prototype = {
-	add: function(position) {
-		this.list.push(new Tree(position.add(new Vector(0, -150 + 300 * Math.random()))));
+	add: function(position, house) {
+		if (!house) {
+			this.list.push(new Tree(position.add(new Vector(0, -150 + 300 * Math.random()))));
+		} else {
+			this.list.push(new House(position.add(new Vector(0, 100 + 100 * Math.random()))));
+		}
 	},
 	next: function() {
 		var particlesToRemove = [];
