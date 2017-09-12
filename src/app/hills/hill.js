@@ -16,12 +16,21 @@ function Hill(last) {
 
 Hill.prototype = {
 	addDecoration: function() {
-		var i = 20;
-		while (i > 0) {
+		var i = 20, existHouse = Math.random() < .3, houseIndex = 0;
+
+		if (existHouse) {
+			houseIndex = parseInt(20 * Math.random());
+			app.decoration.add(app.hills.points[app.hills.points.length - houseIndex].position.get(), true);
+		}
+
+		while (i > 1) {
 			if (Math.random() < .2) {
 				app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
 			}
 			i--;
+			if (houseIndex === i) {
+				i = houseIndex - 5;
+			}
 		}
 	},
 	bound: function() {
