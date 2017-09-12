@@ -1,0 +1,32 @@
+{
+  "name": "mauja",
+  "version": "0.0.1",
+  "description": "A little game...",
+  "main": "index.html",
+  "scripts": {
+    "run": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "mauja, game"
+  ],
+  "author": "Viktor Uhryn",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {}
+}
