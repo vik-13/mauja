@@ -52,7 +52,7 @@ Scene.prototype = {
 		this.lake.r();
 
 		ctx.save();
-		ctx.globalAlpha = .5 * night;
+		ctx.globalAlpha = .6 * night;
 		ctx.fillStyle = 'rgb(21, 30, 30)';
 		ctx.fillRect(0, 0, app.size.x, app.size.y);
 		ctx.restore();

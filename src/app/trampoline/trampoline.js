@@ -1,20 +1,18 @@
-function Trampoline(index) {
+function Trampoline(position, index) {
 	this.HEIGHT = 45;
 	this.WIDTH = 90;
-
-	this.index = index;
-	this.position = app.hills.points[index].position.get();
+	this.position = position.get();
 	this.normal = app.hills.points[index].normal.get();
 	this.angle = this.normal.angle() + (Math.PI / 2);
 	this.points = [];
 
 	this.bound();
-	app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 140, 50);
+	app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 100, 20);
 }
 
 Trampoline.prototype = {
 	deactivate: function() {
-		app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 140, 50);
+		app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 100, 20);
 	},
 	bound: function() {
 		var normal, secondPoint;

@@ -5,8 +5,6 @@ function Ball() {
 	this.speedLimit = 14;
 	this.insideSnow = 5;
 
-	this.trampAcc = 1;
-
 	this.last = 1;
 
 	this.onGround = false;
@@ -128,8 +126,8 @@ Ball.prototype = {
 						if (angle > Math.abs(Math.PI / 2)) {
 							reflection = this.velocity.get().sub(normal.get().mult(1.3 * this.velocity.get().dot(normal)));
 							if (tramp) {
-								this.velocity.apply(reflection.get().add(end.get().sub(start).normalize().mult(this.trampAcc)));
-							} else {
+								this.velocity.apply(end.get().sub(start).normalize().mult(app.ball.velocity.mag() * 1.005));
+								} else {
 								this.velocity.apply(reflection);
 							}
 						}
