@@ -11,7 +11,7 @@ Tree.prototype = {
 			ctx.globalAlpha = !i ? 1 : night;
 			ctx.translate(this.position.x, this.position.y);
 			ctx.miterLimit = 4;
-			ctx.fillStyle = !i ? '#4F443B' : 'rgb(21, 30, 30)';
+			ctx.fillStyle = !i ? '#4F443B' : '#202B2C';
 			bp();
 			m(40.5, 142.429);
 			l(52.5, 142.429);
@@ -25,7 +25,7 @@ Tree.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = !i ? '#528279' : 'rgb(21, 30, 30)';
+			ctx.fillStyle = !i ? '#528279' : '#202B2C';
 			bp();
 			m(46.5, 0);
 			l(67.25, 41.429);
