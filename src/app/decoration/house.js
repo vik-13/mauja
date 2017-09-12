@@ -55,7 +55,7 @@ House.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = !i ? '#D5E2DF' : '#202B2C';
+			ctx.fillStyle = !i ? '#D5E2DF' : '#FCFC65';
 			bp();
 			m(59, 74);
 			l(45, 74);
@@ -65,7 +65,7 @@ House.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = !i ? '#D5E2DF' : '#202B2C';
+			ctx.fillStyle = !i ? '#D5E2DF' : '#FCFC65';
 			bp();
 			m(63, 75);
 			l(63, 92);

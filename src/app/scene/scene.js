@@ -32,17 +32,17 @@ Scene.prototype = {
 		ctx.fillStyle = gradient;
 		ctx.fillRect(0, 0, app.size.x, app.size.y);
 
-		// ctx.font = "20px Arial";
-		// ctx.fillStyle = "white";
-		// ctx.fillText('speed: ' + parseInt(app.ball.velocity.mag()), 10, 20);
-		//
-		// ctx.font = "20px Arial";
-		// ctx.fillStyle = "white";
-		// ctx.fillText('distance: ' + app.ball.last, 10, 50);
-		//
-		// ctx.font = "20px Arial";
-		// ctx.fillStyle = "white";
-		// ctx.fillText('mass: ' + app.ball.mass.toFixed(2), 10, 80);
+		ctx.font = "20px Arial";
+		ctx.fillStyle = "white";
+		ctx.fillText('speed: ' + parseInt(app.ball.velocity.mag()), 10, 20);
+
+		ctx.font = "20px Arial";
+		ctx.fillStyle = "white";
+		ctx.fillText('distance: ' + app.ball.last, 10, 50);
+
+		ctx.font = "20px Arial";
+		ctx.fillStyle = "white";
+		ctx.fillText('mass: ' + app.ball.mass.toFixed(2), 10, 80);
 
 		this.sun.render();
 

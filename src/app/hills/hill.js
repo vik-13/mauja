@@ -19,7 +19,7 @@ Hill.prototype = {
 		var i = 20, existHouse = Math.random() < .3, houseIndex = 0;
 
 		if (existHouse) {
-			houseIndex = parseInt(20 * Math.random());
+			houseIndex = 1 + parseInt(20 * Math.random());
 			app.decoration.add(app.hills.points[app.hills.points.length - houseIndex].position.get(), true);
 		}
 
