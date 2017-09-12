@@ -21,6 +21,7 @@ Scene.prototype = {
 		app.rocks.next();
 		app.trampolines.next();
 		app.particles.next();
+		app.decoration.next();
 
 		this.camera.next(app.ball);
 	},
@@ -59,11 +60,13 @@ Scene.prototype = {
 
 		ctx.save();
 		ctx.translate(this.camera.outPosition.x, this.camera.outPosition.y);
+		app.decoration.render(true);
 		app.hills.render();
 		app.rocks.render();
 		app.ball.render();
 		app.trampolines.render();
 		app.particles.render();
+		app.decoration.render(false);
 		ctx.restore();
 
 		ctx.save();

@@ -1,0 +1,32 @@
+function Decoration() {
+	this.list = [];
+}
+
+Decoration.prototype = {
+	add: function(position) {
+		this.list.push(new Tree(position.add(new Vector(0, -150 + 300 * Math.random()))));
+	},
+	next: function() {
+		var particlesToRemove = [];
+		this.list.forEach(function(tree) {
+			if (tree.position.x + app.scene.camera.outPosition.x < -300) {
+				particlesToRemove.push(tree);
+			}
+		}.bind(this));
+		particlesToRemove.forEach(function(particle) {
+			var index = this.list.indexOf(particle);
+			if (index !== -1) {
+				this.list.splice(index, 1);
+			}
+		}.bind(this));
+	},
+	render: function(back) {
+		this.list.forEach(function(tree) {
+			if (back && tree.back) {
+				tree.render();
+			} else if (!back && !tree.back) {
+				tree.render();
+			}
+		});
+	}
+};

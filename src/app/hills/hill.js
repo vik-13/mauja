@@ -10,9 +10,20 @@ function Hill(last) {
 	this.c2 = this.to.get().sub(new Vector(hDiff * (.3 + Math.random() * .2), 0));
 
 	this.bound();
+
+	this.addDecoration();
 }
 
 Hill.prototype = {
+	addDecoration: function() {
+		var i = 20;
+		while (i > 0) {
+			if (Math.random() < .2) {
+				app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
+			}
+			i--;
+		}
+	},
 	bound: function() {
 		var i, accuracy = 20, points = app.hills.points, point;
 
