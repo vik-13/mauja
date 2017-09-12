@@ -20,6 +20,8 @@ Scene.prototype = {
 		app.ball.next();
 		app.rocks.next();
 		app.trampolines.next();
+		app.particles.next();
+
 		this.camera.next(app.ball);
 	},
 	render: function() {
@@ -61,6 +63,7 @@ Scene.prototype = {
 		app.rocks.render();
 		app.ball.render();
 		app.trampolines.render();
+		app.particles.render();
 		ctx.restore();
 
 		ctx.save();

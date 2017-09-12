@@ -22,6 +22,7 @@
 		app.rocks = new Rocks();
 		app.hills = new Hills();
 		app.ball = new Ball();
+		app.particles = new Particles();
 
 		app.hills.generate();
 

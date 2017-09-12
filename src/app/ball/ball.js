@@ -1,6 +1,6 @@
 function Ball() {
 	this.isDead = false;
-	this.r = 50;
+	this.r = 10;
 	this.mass = .2;
 	this.speedLimit = 14;
 	this.insideSnow = 5;
@@ -23,8 +23,6 @@ function Ball() {
 
 	this.startTime = (new Date()).getTime();
 	this.deadTime = 0;
-
-	this.particles = new Particles();
 }
 
 Ball.prototype = {
@@ -57,7 +55,7 @@ Ball.prototype = {
 			this.position.add(this.velocity);
 			this.acceleration.mult(0);
 
-			this.particles.addForce(this.position, this.r, this.velocity.mag());
+			app.particles.addForce(this.position, this.r, this.velocity.mag());
 
 			this.r = this.r >= 70 ? 70 : this.r + 0.01;
 			this.mass = .2 + (this.r / 700);
@@ -65,7 +63,6 @@ Ball.prototype = {
 		} else {
 			//TODO: implementing dead
 		}
-		this.particles.next();
 	},
 	calculateFriction: function() {
 		return this.velocity.get().normalize().mult(-0.015);
@@ -84,7 +81,7 @@ Ball.prototype = {
 			if (rock.position.distance(this.position) <= rock.r + this.r) {
 				this.isDead = true;
 				this.deadTime = (new Date()).getTime();
-				this.particles.addRockCollision(this.position, this.r, 100);
+				app.particles.addRockCollision(this.position, this.r, 100);
 				this.velocity.apply(new Vector());
 			}
 		}.bind(this));
@@ -118,8 +115,8 @@ Ball.prototype = {
 						Math.sqrt(Math.pow(end.x - start.x, 2) + Math.pow(end.y - start.y, 2));
 					if (distance <= this.r) {
 						this.onGround = true;
-						if (this.velocity.y > 7) {
-							this.particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 100);
+						if (this.velocity.y > 5) {
+							app.particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 100);
 						}
 					} else {
 						this.onGround = false;
@@ -249,7 +246,5 @@ Ball.prototype = {
 			ctx.fill();
 			ctx.restore();
 		}
-
-		this.particles.render();
 	}
 };
