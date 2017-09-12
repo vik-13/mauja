@@ -23,7 +23,7 @@ MountainMid.prototype = {
 			ctx.strokeStyle="rgba(0,0,0,0)";
 			ctx.miterLimit=4;
 			ctx.fillStyle="#B2CED6";
-			ctx.beginPath();
+			bp();
 			m(1561,86);
 			l(1562,86);
 			l(1554,69);

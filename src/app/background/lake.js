@@ -20,10 +20,9 @@ Lake.prototype = {
 			ctx.translate(this.position.x + i * app.size.x, this.position.y);
 			ctx.scale(this.scale, this.scale);
 
-			ctx.strokeStyle="rgba(0,0,0,0)";
 			ctx.miterLimit=4;
 			ctx.fillStyle="#B2CED6";
-			ctx.beginPath();
+			bp();
 			m(0,0);
 			l(211,0);
 			l(127.5,26);
@@ -35,8 +34,6 @@ Lake.prototype = {
 			l(0,0);
 			cp();
 			ctx.fill();
-			ctx.stroke();
-
 			ctx.restore();
 		}
 	}

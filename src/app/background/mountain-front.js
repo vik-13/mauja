@@ -23,7 +23,7 @@ MountainFront.prototype = {
 			ctx.strokeStyle = "rgba(0,0,0,0)";
 			ctx.miterLimit = 4;
 			ctx.fillStyle = "#A6C0CC";
-			ctx.beginPath();
+			bp();
 			m(1840, 100);
 			l(1838, 95);
 			l(1843, 95);
@@ -190,7 +190,7 @@ MountainFront.prototype = {
 			ctx.stroke();
 
 			ctx.fillStyle = "#A6C0CC";
-			ctx.beginPath();
+			bp();
 			m(93, 111);
 			l(93, 80);
 			l(83, 80);
@@ -202,7 +202,7 @@ MountainFront.prototype = {
 			ctx.stroke();
 
 			ctx.fillStyle = "#A6C0CC";
-			ctx.beginPath();
+			bp();
 			m(103, 58);
 			l(112, 58);
 			ctx.quadraticCurveTo(112, 58, 112, 58);
@@ -217,7 +217,7 @@ MountainFront.prototype = {
 			ctx.stroke();
 
 			ctx.fillStyle = "#A6C0CC";
-			ctx.beginPath();
+			bp();
 			m(102, 56);
 			l(114, 56);
 			ctx.quadraticCurveTo(114, 56, 114, 56);
@@ -232,7 +232,7 @@ MountainFront.prototype = {
 			ctx.stroke();
 
 			ctx.fillStyle = "#A6C0CC";
-			ctx.beginPath();
+			bp();
 			m(108, 53);
 			l(105, 46);
 			l(107, 39);
