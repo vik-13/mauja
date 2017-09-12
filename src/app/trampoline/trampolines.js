@@ -48,7 +48,6 @@ Trampolines.prototype = {
 		var found = false, i = app.ball.last, collision = false;
 		while (!found) {
 			if (collision) {
-				console.log(i);
 				i -= 1;
 				if (!this.check(x, i, true)) {
 					found = true;
