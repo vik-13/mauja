@@ -30,7 +30,7 @@ Sun.prototype = {
 		ctx.save();
 		ctx.translate(this.moonPosition.x, this.moonPosition.y);
 		ctx.miterLimit=4;
-		ctx.fillStyle="#C6A620";
+		ctx.fillStyle="#FCFC65";
 		bp();
 		m(68,55);
 		ctx.bezierCurveTo(45,58,25,42,23,19);
