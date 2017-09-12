@@ -1,6 +1,5 @@
 function Trampoline(index) {
-	this.inactive = false;
-	this.HEIGHT = 55;
+	this.HEIGHT = 45;
 	this.WIDTH = 90;
 
 	this.index = index;
@@ -10,11 +9,12 @@ function Trampoline(index) {
 	this.points = [];
 
 	this.bound();
+	app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 140, 50);
 }
 
 Trampoline.prototype = {
 	deactivate: function() {
-
+		app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 140, 50);
 	},
 	bound: function() {
 		var normal, secondPoint;
@@ -33,7 +33,7 @@ Trampoline.prototype = {
 		});
 	},
 	render: function() {
-		var shiftX = 0, shiftY = -55;
+		var shiftX = 0, shiftY = -45;
 		var i;
 
 		for (i = 0; i < 2; i++) {
