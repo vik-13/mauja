@@ -27,7 +27,10 @@ Particle.prototype = {
 		this.position.add(this.velocity);
 		this.acceleration.mult(0);
 		this.check();
-		this.color = night !== 1 ? '#E8EFEE' : 'rgb(21, 30, 30)';
+		this.color = 'rgb(' + this.getColor(232, 21) + ',' + this.getColor(239, 30) + ',' + this.getColor(238, 30) + ')';
+	},
+	getColor: function(from, to) {
+		return Math.round(from + (to - from) * night);
 	},
 	render: function() {
 		var opacity = 1 - (((new Date()).getTime() - this.startTime) / this.lifeTime);
