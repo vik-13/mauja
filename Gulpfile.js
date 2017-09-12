@@ -57,8 +57,8 @@ function buildIndex() {
 
 function buildScripts() {
     return gulp.src(config.sources.scripts)
-        //.pipe(concat('app.js'))
-        //.pipe(uglify())
+        .pipe(concat('app.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(config.release.scripts));
 }
 

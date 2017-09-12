@@ -15,7 +15,7 @@ MountainBack.prototype = {
 		ctx.strokeStyle="rgba(0,0,0,0)";
 		ctx.miterLimit=4;
 		ctx.fillStyle="#BED8D8";
-		ctx.beginPath();
+		bp();
 		m(1922,186);
 		l(1920,182);
 		l(1924,183);

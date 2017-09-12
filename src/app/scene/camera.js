@@ -1,5 +1,5 @@
 function Camera() {
-	this.shift = new Vector(200, 350);
+	this.shift = new Vector(200, 300);
 	this.position = new Vector();
 	this.outPosition = new Vector();
 	this.velocity = new Vector();
