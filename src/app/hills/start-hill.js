@@ -6,9 +6,20 @@ function StartHill() {
 	this.c2 = new Vector(1000, 700);
 
 	this.bound();
+
+	this.addDecoration();
 }
 
 StartHill.prototype = {
+	addDecoration: function() {
+		var i = 20;
+		while (i > 0) {
+			if (Math.random() < .2) {
+				app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
+			}
+			i--;
+		}
+	},
 	bound: function() {
 		var accuracy = 20;
 		var i, points = app.hills.points, point;

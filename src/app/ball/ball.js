@@ -111,20 +111,16 @@ Ball.prototype = {
 						end.x * start.y -
 						end.y * start.x) /
 						Math.sqrt(Math.pow(end.x - start.x, 2) + Math.pow(end.y - start.y, 2));
-					if (distance <= this.r) {
-						this.onGround = true;
-						if (this.velocity.y > 5) {
-							app.particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 100);
-						}
-					} else {
-						this.onGround = false;
-					}
+					this.onGround = distance <= this.r;
 					if (distance <= this.r - this.insideSnow) {
 						normal = end.normal(middle);
 
 						angle = normal.angle(this.velocity.get().normalize());
 						if (angle > Math.abs(Math.PI / 2)) {
 							reflection = this.velocity.get().sub(normal.get().mult(1.3 * this.velocity.get().dot(normal)));
+							if (this.velocity.y > 9) {
+								app.particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 30);
+							}
 							if (tramp) {
 								this.velocity.apply(end.get().sub(start).normalize().mult(app.ball.velocity.mag() * 1.005));
 								} else {

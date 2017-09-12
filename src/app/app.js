@@ -23,6 +23,7 @@
 		app.hills = new Hills();
 		app.ball = new Ball();
 		app.particles = new Particles();
+		app.decoration = new Decoration();
 
 		app.hills.generate();
 
