@@ -59,6 +59,7 @@ Scene.prototype = {
 		ctx.restore();
 
 		ctx.save();
+		ctx.scale(ratio, ratio);
 		ctx.translate(this.camera.outPosition.x, this.camera.outPosition.y);
 		app.decoration.render(true);
 		app.hills.render();
