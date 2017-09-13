@@ -17,7 +17,7 @@ Bear.prototype = {
 			ctx.rotate(this.angle);
 
 			ctx.miterLimit = 4;
-			ctx.fillStyle = "#7E5A49";
+			ctx.fillStyle = !i ? '#7E5A49' : '#202B2C';
 			bp();
 			m(13 + shiftX, 12 + shiftY);
 			l(32 + shiftX, 1 + shiftY);
@@ -27,7 +27,8 @@ Bear.prototype = {
 			l(13 + shiftX, 12 + shiftY);
 			cp();
 			ctx.fill();
-			ctx.fillStyle = "#9F785A";
+
+			ctx.fillStyle = !i ? '#9F785A' : '#202B2C';
 			bp();
 			m(62 + shiftX, 4 + shiftY);
 			l(32 + shiftX, 1 + shiftY);
@@ -37,7 +38,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#5B4737";
+			ctx.fillStyle = !i ? '#5B4737' : '#202B2C';
 			bp();
 			m(36 + shiftX, 41 + shiftY);
 			l(35 + shiftX, 31 + shiftY);
@@ -46,7 +47,6 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#5B4737";
 			bp();
 			m(13 + shiftX, 13 + shiftY);
 			l(9 + shiftX, 19 + shiftY);
@@ -55,7 +55,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#9F785A";
+			ctx.fillStyle = !i ? '#9F785A' : '#202B2C';
 			bp();
 			m(6 + shiftX, 28 + shiftY);
 			l(5 + shiftX, 26 + shiftY);
@@ -65,7 +65,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#45322C";
+			ctx.fillStyle = !i ? '#45322C' : '#202B2C';
 			bp();
 			m(19 + shiftX, 38 + shiftY);
 			l(13 + shiftX, 26 + shiftY);
@@ -76,7 +76,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#7F5945";
+			ctx.fillStyle = !i ? '#7F5945' : '#202B2C';
 			bp();
 			m(14 + shiftX, 55 + shiftY);
 			l(10 + shiftX, 48 + shiftY);
@@ -85,12 +85,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#7E5A49";
-			bp();
-			m(38 + shiftX, 55 + shiftY);
-			ctx.fill();
-
-			ctx.fillStyle = "#A57F64";
+			ctx.fillStyle = !i ? '#A57F64' : '#202B2C';
 			bp();
 			m(38 + shiftX, 54 + shiftY);
 			l(32 + shiftX, 49 + shiftY);
@@ -99,7 +94,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#C2A187";
+			ctx.fillStyle = !i ? '#C2A187' : '#202B2C';
 			bp();
 			m(67 + shiftX, 9 + shiftY);
 			l(62 + shiftX, 4 + shiftY);
@@ -108,7 +103,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#9F785A";
+			ctx.fillStyle = !i ? '#9F785A' : '#202B2C';
 			bp();
 			m(70 + shiftX, 0 + shiftY);
 			l(67 + shiftX, 9 + shiftY);
@@ -117,7 +112,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#594537";
+			ctx.fillStyle = !i ? '#594537' : '#202B2C';
 			bp();
 			m(79 + shiftX, 4 + shiftY);
 			l(67 + shiftX, 9 + shiftY);
@@ -126,7 +121,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#815B4A";
+			ctx.fillStyle = !i ? '#815B4A' : '#202B2C';
 			bp();
 			m(79 + shiftX, 34 + shiftY);
 			l(79 + shiftX, 4 + shiftY);
@@ -138,7 +133,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#5B4737";
+			ctx.fillStyle = !i ? '#5B4737' : '#202B2C';
 			bp();
 			m(57 + shiftX, 41 + shiftY);
 			l(59 + shiftX, 36 + shiftY);
@@ -149,7 +144,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#815B4A";
+			ctx.fillStyle = !i ? '#815B4A' : '#202B2C';
 			bp();
 			m(73 + shiftX, 54 + shiftY);
 			l(68 + shiftX, 50 + shiftY);
@@ -158,7 +153,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A47C59";
+			ctx.fillStyle = !i ? '#A47C59' : '#202B2C';
 			bp();
 			m(90 + shiftX, 53 + shiftY);
 			l(87 + shiftX, 42 + shiftY);
@@ -167,7 +162,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#C2A187";
+			ctx.fillStyle = !i ? '#C2A187' : '#202B2C';
 			bp();
 			m(82 + shiftX, 55 + shiftY);
 			l(83 + shiftX, 52 + shiftY);
@@ -176,7 +171,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#9F785B";
+			ctx.fillStyle = !i ? '#9F785B' : '#202B2C';
 			bp();
 			m(95 + shiftX, 10 + shiftY);
 			l(87 + shiftX, 29 + shiftY);
@@ -186,7 +181,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#594537";
+			ctx.fillStyle = !i ? '#594537' : '#202B2C';
 			bp();
 			m(92 + shiftX, 17 + shiftY);
 			l(98 + shiftX, 15 + shiftY);
@@ -195,7 +190,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#815B4A";
+			ctx.fillStyle = !i ? '#815B4A' : '#202B2C';
 			bp();
 			m(98 + shiftX, 12 + shiftY);
 			l(98 + shiftX, 15 + shiftY);
@@ -205,7 +200,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A27F64";
+			ctx.fillStyle = !i ? '#A27F64' : '#202B2C';
 			bp();
 			m(95 + shiftX, 10 + shiftY);
 			l(96 + shiftX, 12 + shiftY);
@@ -214,7 +209,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A27F64";
+			ctx.fillStyle = !i ? '#A27F64' : '#202B2C';
 			bp();
 			m(101 + shiftX, 21 + shiftY);
 			l(98 + shiftX, 15 + shiftY);
@@ -226,7 +221,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#815B4A";
+			ctx.fillStyle = !i ? '#815B4A' : '#202B2C';
 			bp();
 			m(95 + shiftX, 32 + shiftY);
 			l(99 + shiftX, 25 + shiftY);
@@ -236,7 +231,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#594537";
+			ctx.fillStyle = !i ? '#594537' : '#202B2C';
 			bp();
 			m(101 + shiftX, 21 + shiftY);
 			l(99 + shiftX, 25 + shiftY);
@@ -245,7 +240,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#C2A187";
+			ctx.fillStyle = !i ? '#C2A187' : '#202B2C';
 			bp();
 			m(104 + shiftX, 29 + shiftY);
 			l(101 + shiftX, 23 + shiftY);
@@ -254,7 +249,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#9F785B";
+			ctx.fillStyle = !i ? '#9F785B' : '#202B2C';
 			bp();
 			m(96 + shiftX, 30 + shiftY);
 			l(99 + shiftX, 32 + shiftY);
@@ -265,7 +260,7 @@ Bear.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#594537";
+			ctx.fillStyle = !i ? '#594537' : '#202B2C';
 			bp();
 			m(104 + shiftX, 29 + shiftY);
 			l(103 + shiftX, 30 + shiftY);

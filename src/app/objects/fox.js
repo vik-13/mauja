@@ -17,7 +17,7 @@ Fox.prototype = {
 			ctx.rotate(this.angle);
 
 			ctx.miterLimit = 4;
-			ctx.fillStyle = "#C2C2C2";
+			ctx.fillStyle = !i ? '#C2C2C2' : '#202B2C';
 			bp();
 			m(shiftX, 17 + shiftY);
 			l(22 + shiftX, 16 + shiftY);
@@ -26,7 +26,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3E3E3";
+			ctx.fillStyle = !i ? '#E3E3E3' : '#202B2C';
 			bp();
 			m(23 + shiftX, 31 + shiftY);
 			l(22 + shiftX, 16 + shiftY);
@@ -35,7 +35,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3642A";
+			ctx.fillStyle = !i ? '#E3642A' : '#202B2C';
 			bp();
 			m(24 + shiftX, 13 + shiftY);
 			l(shiftX, 17 + shiftY);
@@ -44,7 +44,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E77B3B";
+			ctx.fillStyle = !i ? '#E77B3B' : '#202B2C';
 			bp();
 			m(20 + shiftX, 10 + shiftY);
 			l(24 + shiftX, 13 + shiftY);
@@ -53,7 +53,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3642A";
+			ctx.fillStyle = !i ? '#E3642A' : '#202B2C';
 			bp();
 			m(10 + shiftX, 7 + shiftY);
 			l(14 + shiftX, 14 + shiftY);
@@ -63,7 +63,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#CE4121";
+			ctx.fillStyle = !i ? '#CE4121' : '#202B2C';
 			bp();
 			m(8 + shiftX, 4 + shiftY);
 			l(10 + shiftX, 7 + shiftY);
@@ -72,7 +72,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E65827";
+			ctx.fillStyle = !i ? '#E65827' : '#202B2C';
 			bp();
 			m(shiftX, 17 + shiftY);
 			l(5 + shiftX, 13 + shiftY);
@@ -82,7 +82,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#CE4121";
+			ctx.fillStyle = !i ? '#CE4121' : '#202B2C';
 			bp();
 			m(11 + shiftX, 9 + shiftY);
 			l(10 + shiftX, 10 + shiftY);
@@ -92,12 +92,12 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#CE4121";
+			ctx.fillStyle = !i ? '#CE4121' : '#202B2C';
 			bp();
 			m(14 + shiftX, 14 + shiftY);
 			ctx.fill();
 
-			ctx.fillStyle = "#D24C23";
+			ctx.fillStyle = !i ? '#D24C23' : '#202B2C';
 			bp();
 			m(14 + shiftX, 14 + shiftY);
 			l(10 + shiftX, 10 + shiftY);
@@ -106,7 +106,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E77B3B";
+			ctx.fillStyle = !i ? '#E77B3B' : '#202B2C';
 			bp();
 			m(43 + shiftX, 13 + shiftY);
 			l(22 + shiftX, 16 + shiftY);
@@ -115,7 +115,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3642A";
+			ctx.fillStyle = !i ? '#E3642A' : '#202B2C';
 			bp();
 			m(23 + shiftX, 31 + shiftY);
 			l(43 + shiftX, 13 + shiftY);
@@ -124,7 +124,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E65827";
+			ctx.fillStyle = !i ? '#E65827' : '#202B2C';
 			bp();
 			m(53 + shiftX, 23 + shiftY);
 			l(43 + shiftX, 13 + shiftY);
@@ -133,7 +133,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E77B3B";
+			ctx.fillStyle = !i ? '#E77B3B' : '#202B2C';
 			bp();
 			m(66 + shiftX, 8 + shiftY);
 			l(53 + shiftX, 23 + shiftY);
@@ -142,7 +142,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E65827";
+			ctx.fillStyle = !i ? '#E65827' : '#202B2C';
 			bp();
 			m(63 + shiftX, 26 + shiftY);
 			l(66 + shiftX, 8 + shiftY);
@@ -151,7 +151,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3642A";
+			ctx.fillStyle = !i ? '#E3642A' : '#202B2C';
 			bp();
 			m(74 + shiftX, 23 + shiftY);
 			l(66 + shiftX, 8 + shiftY);
@@ -161,7 +161,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#D54022";
+			ctx.fillStyle = !i ? '#D54022' : '#202B2C';
 			bp();
 			m(13 + shiftX, 37 + shiftY);
 			l(53 + shiftX, 23 + shiftY);
@@ -170,7 +170,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A03017";
+			ctx.fillStyle = !i ? '#A03017' : '#202B2C';
 			bp();
 			m(16 + shiftX, 38 + shiftY);
 			l(13 + shiftX, 37 + shiftY);
@@ -179,7 +179,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#210D08";
+			ctx.fillStyle = !i ? '#210D08' : '#202B2C';
 			bp();
 			m(8 + shiftX, 43 + shiftY);
 			l(13 + shiftX, 37 + shiftY);
@@ -188,7 +188,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A03017";
+			ctx.fillStyle = !i ? '#A03017' : '#202B2C';
 			bp();
 			m(43 + shiftX, 38 + shiftY);
 			l(42 + shiftX, 27 + shiftY);
@@ -197,7 +197,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#210D08";
+			ctx.fillStyle = !i ? '#210D08' : '#202B2C';
 			bp();
 			m(41 + shiftX, 44 + shiftY);
 			l(43 + shiftX, 38 + shiftY);
@@ -206,7 +206,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#D54022";
+			ctx.fillStyle = !i ? '#D54022' : '#202B2C';
 			bp();
 			m(53 + shiftX, 23 + shiftY);
 			l(59 + shiftX, 35 + shiftY);
@@ -215,7 +215,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A03017";
+			ctx.fillStyle = !i ? '#A03017' : '#202B2C';
 			bp();
 			m(61 + shiftX, 39 + shiftY);
 			l(63 + shiftX, 26 + shiftY);
@@ -224,7 +224,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#210D08";
+			ctx.fillStyle = !i ? '#210D08' : '#202B2C';
 			bp();
 			m(54 + shiftX, 44 + shiftY);
 			l(61 + shiftX, 39 + shiftY);
@@ -233,7 +233,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#D54022";
+			ctx.fillStyle = !i ? '#D54022' : '#202B2C';
 			bp();
 			m(80 + shiftX, 33 + shiftY);
 			l(74 + shiftX, 23 + shiftY);
@@ -242,7 +242,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A03017";
+			ctx.fillStyle = !i ? '#A03017' : '#202B2C';
 			bp();
 			m(83 + shiftX, 30 + shiftY);
 			l(80 + shiftX, 33 + shiftY);
@@ -251,7 +251,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#210D08";
+			ctx.fillStyle = !i ? '#210D08' : '#202B2C';
 			bp();
 			m(83 + shiftX, 43 + shiftY);
 			l(83 + shiftX, 30 + shiftY);
@@ -260,7 +260,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E77B3B";
+			ctx.fillStyle = !i ? '#E77B3B' : '#202B2C';
 			bp();
 			m(82 + shiftX, 8 + shiftY);
 			l(66 + shiftX, 8 + shiftY);
@@ -269,7 +269,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3642A";
+			ctx.fillStyle = !i ? '#E3642A' : '#202B2C';
 			bp();
 			m(102 + shiftX, 15 + shiftY);
 			l(84 + shiftX, 21 + shiftY);
@@ -278,7 +278,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#D54022";
+			ctx.fillStyle = !i ? '#D54022' : '#202B2C';
 			bp();
 			m(102 + shiftX, 23 + shiftY);
 			l(102 + shiftX, 15 + shiftY);
@@ -287,7 +287,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#A03017";
+			ctx.fillStyle = !i ? '#A03017' : '#202B2C';
 			bp();
 			m(111 + shiftX, 14 + shiftY);
 			l(102 + shiftX, 15 + shiftY);
@@ -296,7 +296,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#D54022";
+			ctx.fillStyle = !i ? '#D54022' : '#202B2C';
 			bp();
 			m(108 + shiftX, 5 + shiftY);
 			l(111 + shiftX, 14 + shiftY);
@@ -305,7 +305,7 @@ Fox.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = "#E3642A";
+			ctx.fillStyle = !i ? '#E3642A' : '#202B2C';
 			bp();
 			m(94 + shiftX, shiftY);
 			l(102 + shiftX, 15 + shiftY);

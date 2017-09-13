@@ -36,7 +36,7 @@ Ball.prototype = {
 
 			this.velocity.add(this.acceleration);
 
-			this.rockCollision();
+			this.itemCollision();
 			this.collision();
 
 			if (this.onGround) {
@@ -75,9 +75,9 @@ Ball.prototype = {
 		}.bind(this));
 		return currentTramp;
 	},
-	rockCollision: function() {
-		app.rocks.list.forEach(function(rock) {
-			if (rock.position.distance(this.position) <= rock.r + this.r) {
+	itemCollision: function() {
+		app.objects.list.forEach(function(item) {
+			if (item.position.distance(this.position) <= item.r + this.r) {
 				this.isDead = true;
 				this.deadTime = (new Date()).getTime();
 				app.particles.addRockCollision(this.position, this.r, 100);
