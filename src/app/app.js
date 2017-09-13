@@ -32,7 +32,6 @@
 		lifeCycle();
 
 		document.addEventListener('mousedown', function(event) {
-			event.preventDefault();
 			if (app.ball.isDead) {
 				reset()
 			} else if (app.ball.isReadyToStart) {
