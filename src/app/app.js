@@ -32,11 +32,19 @@
 		lifeCycle();
 
 		document.addEventListener('mousedown', function(event) {
-			app.trampolines.add(event.screenX / ratio);
+			if (!app.ball.isDead) {
+				app.trampolines.add(event.screenX / ratio);
+			} else {
+				app.ball.activate();
+			}
 		});
 
 		document.addEventListener('touchstart', function(event) {
-			app.trampolines.add(event.touches[0].screenX / ratio);
+			if (!app.ball.isDead) {
+				app.trampolines.add(event.touches[0].screenX / ratio);
+			} else {
+				app.ball.activate();
+			}
 		});
 	}
 
