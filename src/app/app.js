@@ -12,7 +12,9 @@
 		window.bp = ctx.beginPath.bind(ctx);
 		window.cp = ctx.closePath.bind(ctx);
 
+		window.res = {x: 1600, y: 900};
 		app.size = {x: window.innerWidth, y: window.innerHeight};
+		window.ratio = app.size.x / res.x;
 		app.canvas.width = app.size.x;
 		app.canvas.height = app.size.y;
 
