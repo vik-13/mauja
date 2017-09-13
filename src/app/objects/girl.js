@@ -17,26 +17,6 @@ Girl.prototype = {
 			ctx.rotate(this.angle);
 
 			ctx.miterLimit = 4;
-			ctx.fillStyle="rgba(0,0,0,1)";
-			bp();
-			m(8,52);
-			l(8,52);
-			l(15,56);
-			l(15,56);
-			l(8,52);
-			cp();
-			ctx.fill();
-
-			ctx.fillStyle="rgba(0,0,0,1)";
-			bp();
-			m(41,52);
-			l(41,52);
-			l(39,49);
-			l(37,45);
-			l(37,45);
-			l(41,52);
-			cp();
-			ctx.fill();
 
 			ctx.fillStyle = "#A58E67";
 			bp();
