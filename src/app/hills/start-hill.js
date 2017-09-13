@@ -12,7 +12,6 @@ function StartHill() {
 
 StartHill.prototype = {
 	addDecoration: function() {
-		console.log('add decorator');
 		app.decoration.add(app.hills.points[3].position.get(), true, 120);
 		app.decoration.add(app.hills.points[6].position.get(), true, 100);
 		app.decoration.add(app.hills.points[4].position.get(), true, 180);

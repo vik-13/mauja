@@ -33,10 +33,8 @@
 
 		document.addEventListener('mousedown', function(event) {
 			if (app.ball.isDead) {
-				console.log('reset');
 				reset()
 			} else if (app.ball.isReadyToStart) {
-				console.log('activate');
 				app.ball.activate();
 			} else {
 				app.trampolines.add(event.screenX / ratio);
