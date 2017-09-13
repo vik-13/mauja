@@ -88,7 +88,7 @@ Scene.prototype = {
 		if (app.ball.isDead) {
 			ctx.save();
 			fontSize = app.size.x * .1;
-			ctx.translate(app.size.x - (app.size.x * .07), 100);
+			ctx.translate(app.size.x - (app.size.x * .07), 70);
 
 			ctx.font = (fontSize * .26) + 'px Courier New';
 			ctx.textAlign = 'right';
