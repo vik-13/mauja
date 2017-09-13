@@ -4,11 +4,17 @@ function Rocks() {
 
 Rocks.prototype = {
 	add: function(index) {
-		if (Math.random() < .5) {
-			this.list.push(new Rock(index));
-		} else {
-			this.list.push(new Fox(index));
-		}
+		var r = Math.random();
+		this.list.push(new Girl(index));
+		// if (r < .25) {
+		// 	this.list.push(new Rock(index));
+		// } else if (r < .5) {
+		// 	this.list.push(new Fox(index));
+		// } else if (r < .75) {
+		// 	this.list.push(new Bear(index));
+		// } else {
+		// 	this.list.push(new Girl(index));
+		// }
 	},
 	next: function() {
 
