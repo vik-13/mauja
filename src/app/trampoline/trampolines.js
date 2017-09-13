@@ -22,7 +22,6 @@ Trampolines.prototype = {
 				end = app.hills.points[info.index + 1].position;
 				position = new Vector(convertedX, start.y + ((convertedX - start.x) / (end.x - start.x)) * (end.y - start.y));
 			}
-			console.log(position, info.index);
 			trampoline = new Trampoline(position, info.index);
 			this.list.push(trampoline);
 		}

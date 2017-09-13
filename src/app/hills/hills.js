@@ -46,6 +46,17 @@ Hills.prototype = {
 		for (i = this.list.length - this.momentAmount; i < this.list.length; i++) {
 			this.list[i].renderNight();
 		}
+
+		ctx.moveTo(this.list[0].from.x, this.list[0].from.y);
+		this.points.forEach(function(point, index) {
+			ctx.beginPath();
+			ctx.moveTo(point.position.x, point.position.y);
+			ctx.lineTo(point.position.x + point.normal.x * 20, point.position.y + point.normal.y * 20);
+			ctx.strokeStyle = '#000000';
+			ctx.lineWidth = 1;
+			ctx.stroke();
+		});
+
 		ctx.restore();
 	}
 };

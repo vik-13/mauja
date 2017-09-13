@@ -34,7 +34,7 @@ House.prototype = {
 			cp();
 			ctx.fill();
 
-			ctx.fillStyle = !i ? '#D5E2DF' : '#202B2C';
+			ctx.fillStyle = !i ? '#D5E2DF' : 'rgb(59, 74, 80)';
 			bp();
 			m(196, 0);
 			l(255, 81);
