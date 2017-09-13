@@ -19,7 +19,7 @@
 		app.gravity = (new Gravity()).gravity;
 		app.scene = new Scene();
 		app.trampolines = new Trampolines();
-		app.rocks = new Rocks();
+		app.objects = new Objects();
 		app.hills = new Hills();
 		app.ball = new Ball();
 		app.particles = new Particles();

@@ -1,8 +1,8 @@
-function Rocks() {
+function Objects() {
 	this.list = [];
 }
 
-Rocks.prototype = {
+Objects.prototype = {
 	add: function(index) {
 		var r = Math.random();
 		if (r < .25) {
@@ -19,8 +19,8 @@ Rocks.prototype = {
 
 	},
 	render: function() {
-		this.list.forEach(function(rock) {
-			rock.render();
+		this.list.forEach(function(item) {
+			item.render();
 		});
 	}
 };

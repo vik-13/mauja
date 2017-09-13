@@ -18,7 +18,7 @@ Scene.prototype = {
 
 		app.hills.next();
 		app.ball.next();
-		app.rocks.next();
+		app.objects.next();
 		app.trampolines.next();
 		app.particles.next();
 		app.decoration.next();
@@ -62,7 +62,7 @@ Scene.prototype = {
 		ctx.translate(this.camera.outPosition.x, this.camera.outPosition.y);
 		app.decoration.render(true);
 		app.hills.render();
-		app.rocks.render();
+		app.objects.render();
 		app.ball.render();
 		app.trampolines.render();
 		app.particles.render();

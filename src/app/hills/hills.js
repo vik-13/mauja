@@ -26,13 +26,12 @@ Hills.prototype = {
 			this.list.push(new Hill(this.list[this.list.length - 1]));
 		}
 		if (Math.random() <= 1) {
-			app.rocks.add(this.points.length - parseInt(Math.random() * 20) - 1);
+			app.objects.add(this.points.length - parseInt(Math.random() * 20) - 1);
 		}
 	},
 	generate: function() {
 		var i;
 		this.list.push(new StartHill());
-		app.rocks.add(this.points.length - parseInt(Math.random() * 20) - 1);
 		this.list.push(new Hill(this.list[this.list.length - 1]));
 		for (i = 0; i < this.momentAmount - 2; i++) {
 			this.add();
@@ -47,16 +46,6 @@ Hills.prototype = {
 		for (i = this.list.length - this.momentAmount; i < this.list.length; i++) {
 			this.list[i].renderNight();
 		}
-
-		ctx.moveTo(this.list[0].from.x, this.list[0].from.y);
-		this.points.forEach(function(point, index) {
-			ctx.beginPath();
-			ctx.moveTo(point.position.x, point.position.y);
-			ctx.lineTo(point.position.x + point.normal.x * 20, point.position.y + point.normal.y * 20);
-			ctx.strokeStyle = '#000000';
-			ctx.lineWidth = 1;
-			ctx.stroke();
-		});
 
 		ctx.restore();
 	}

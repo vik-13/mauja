@@ -30,10 +30,10 @@ Trampolines.prototype = {
 	},
 	check: function(position) {
 		var found = false, x = 0;
-		app.rocks.list.forEach(function(rock) {
-			if (rock.position.distance(position) < (rock.r + 90)) {
+		app.objects.list.forEach(function(item) {
+			if (item.position.distance(position) < (item.r + 90)) {
 				found = true;
-				x = rock.position.x - rock.halfWidth;
+				x = item.position.x - item.halfWidth;
 			}
 		});
 		return found && x;
@@ -41,7 +41,6 @@ Trampolines.prototype = {
 	searchIndex: function(x) {
 		var found = false, i = app.ball.last;
 		while (!found) {
-			console.log(x, app.hills.points[i].position.x);
 			if (x <= app.hills.points[i].position.x) {
 				found = true;
 				i--;
@@ -50,27 +49,6 @@ Trampolines.prototype = {
 			}
 		}
 		return i;
-	},
-	searchBestPosition: function(x) {
-		var found = false, i = app.ball.last, collision = false;
-		while (!found) {
-			if (collision) {
-				i -= 1;
-				if (!this.check(x, i, true)) {
-					found = true;
-				}
-			} else if (x <= app.hills.points[i].position.x) {
-				i -= 1;
-				if (this.check(x, i)) {
-					collision = true;
-				} else {
-					found = true;
-				}
-			} else {
-				i++;
-			}
-		}
-		return {index: i, collision: collision};
 	},
 	next: function() {},
 	render: function() {
