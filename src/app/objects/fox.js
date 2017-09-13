@@ -1,7 +1,8 @@
-function Fox(index) {
+function Fox(index, shiftY) {
 	this.position = new Vector(app.hills.points[index].position.x, app.hills.points[index].position.y);
 	this.r = 30;
 	this.halfWidth = 56;
+	this.shiftY = shiftY || 0;
 	this.angle = app.hills.points[index].normal.angle() + (Math.PI / 2);
 }
 
@@ -13,7 +14,7 @@ Fox.prototype = {
 		for (i = 0; i < 2; i++) {
 			ctx.save();
 			ctx.globalAlpha = !i ? 1 : night;
-			ctx.translate(this.position.x, this.position.y);
+			ctx.translate(this.position.x, this.position.y + this.shiftY);
 			ctx.rotate(this.angle);
 
 			ctx.miterLimit = 4;

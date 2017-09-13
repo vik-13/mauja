@@ -12,7 +12,7 @@
 		window.bp = ctx.beginPath.bind(ctx);
 		window.cp = ctx.closePath.bind(ctx);
 
-		window.res = {x: 1600, y: 900};
+		window.res = {x: 1280, y: 800};
 		app.size = {x: window.innerWidth, y: window.innerHeight};
 		window.ratio = app.size.x / res.x;
 		app.canvas.width = app.size.x;
@@ -31,8 +31,20 @@
 
 		lifeCycle();
 
-		document.addEventListener('click', function(event) {
-			app.trampolines.add(event.screenX);
+		document.addEventListener('mousedown', function(event) {
+			if (!app.ball.isDead) {
+				app.trampolines.add(event.screenX / ratio);
+			} else {
+				app.ball.activate();
+			}
+		});
+
+		document.addEventListener('touchstart', function(event) {
+			if (!app.ball.isDead) {
+				app.trampolines.add(event.touches[0].screenX / ratio);
+			} else {
+				app.ball.activate();
+			}
 		});
 	}
 

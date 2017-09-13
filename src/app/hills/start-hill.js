@@ -12,22 +12,39 @@ function StartHill() {
 
 StartHill.prototype = {
 	addDecoration: function() {
-		var i = 19, existHouse = Math.random() < 1, houseIndex = 0;
+		// var i = 19, existHouse = Math.random() < 1, houseIndex = 0;
+		//
+		// if (existHouse) {
+		// 	houseIndex = 1 + parseInt(20 * Math.random());
+		// 	app.decoration.add(app.hills.points[app.hills.points.length - houseIndex].position.get(), true);
+		// }
+		//
+		// while (i > 0) {
+		// 	if (Math.random() < .2) {
+		// 		app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
+		// 	}
+		// 	i--;
+		// 	if (houseIndex === i) {
+		// 		i = houseIndex - 5;
+		// 	}
+		// }
 
-		if (existHouse) {
-			houseIndex = 1 + parseInt(20 * Math.random());
-			app.decoration.add(app.hills.points[app.hills.points.length - houseIndex].position.get(), true);
-		}
 
-		while (i > 0) {
-			if (Math.random() < .2) {
-				app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
-			}
-			i--;
-			if (houseIndex === i) {
-				i = houseIndex - 5;
-			}
-		}
+		app.decoration.add(app.hills.points[3].position.get(), true, 120);
+		app.decoration.add(app.hills.points[6].position.get(), true, 100);
+		app.decoration.add(app.hills.points[4].position.get(), true, 180);
+
+		app.decoration.add(app.hills.points[9].position.get(), true, 180);
+
+		app.decoration.add(app.hills.points[1].position.get(), false, 100, false);
+		app.decoration.add(app.hills.points[2].position.get(), false, 200, false);
+		app.decoration.add(app.hills.points[3].position.get(), false, 250, false);
+
+		app.decoration.addObj(new Girl(3));
+		app.decoration.addObj(new Girl(5));
+		app.decoration.addObj(new Fox(4, 350));
+		app.decoration.addObj(new Fox(5, 390));
+		app.decoration.addObj(new Fox(3, 370));
 	},
 	bound: function() {
 		var accuracy = 20;

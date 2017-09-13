@@ -1,16 +1,16 @@
 function Ball() {
-	this.isDead = false;
+	this.isDead = true;
 	this.r = 10;
 	this.mass = .2;
-	this.speedLimit = 10 + (this.r - 10) * .1;
+	this.speedLimit = 10 + (this.r - 10) * .2;
 	this.insideSnow = 5;
 
 	this.last = 1;
 
 	this.onGround = false;
 
-	this.position = new Vector(200, 100);
-	this.velocity = new Vector(5, 0);
+	this.position = new Vector(200, 400);
+	this.velocity = new Vector(0, 0);
 	this.acceleration = new Vector();
 
 	this.shadowAngle = 0;
@@ -24,11 +24,16 @@ function Ball() {
 }
 
 Ball.prototype = {
+	activate: function() {
+		this.isDead = false;
+		this.position = new Vector(230, 210);
+		this.velocity = new Vector(8, -8);
+	},
 	next: function() {
 		var friction;
 
 		if (!this.isDead) {
-			this.speedLimit = 10 + (this.r - 10) * .1;
+			this.speedLimit = 10 + (this.r - 10) * .2;
 			friction = this.calculateFriction();
 
 			this.acceleration.add(friction);
