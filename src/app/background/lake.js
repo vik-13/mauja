@@ -7,6 +7,7 @@ function Lake() {
 // lake: w=1964 px, h=792px
 Lake.prototype = {
 	next: function() {
+		this.scale = app.size.x / 1964;
 		this.position.sub(new Vector(this.speed * app.ball.velocity.x, 0));
 		if (this.position.x <= -app.size.x) {
 			this.position.x = 0;
