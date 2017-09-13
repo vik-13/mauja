@@ -1,5 +1,6 @@
 function Ball() {
-	this.isDead = true;
+	this.isReadyToStart = true;
+	this.isDead = false;
 	this.r = 10;
 	this.mass = .2;
 	this.speedLimit = 10 + (this.r - 10) * .2;
@@ -24,15 +25,29 @@ function Ball() {
 }
 
 Ball.prototype = {
-	activate: function() {
+	reset: function() {
+		this.r = 10;
+		this.mass = .2;
+		this.speedLimit = 10 + (this.r - 10) * .2;
+		this.last = 1;
+		this.onGround = false;
 		this.isDead = false;
+		this.isReadyToStart = true;
+		this.position = new Vector(200, 400);
+		this.velocity = new Vector(0, 0);
+	},
+	activate: function() {
 		this.position = new Vector(230, 210);
 		this.velocity = new Vector(8, -8);
+		this.isReadyToStart = false;
+	},
+	deactivate: function() {
+
 	},
 	next: function() {
 		var friction;
 
-		if (!this.isDead) {
+		if (!this.isDead && !this.isReadyToStart) {
 			this.speedLimit = 10 + (this.r - 10) * .2;
 			friction = this.calculateFriction();
 
@@ -87,6 +102,7 @@ Ball.prototype = {
 				this.deadTime = (new Date()).getTime();
 				app.particles.addRockCollision(this.position, this.r, 100);
 				this.velocity.apply(new Vector());
+				this.deactivate();
 			}
 		}.bind(this));
 	},
@@ -142,7 +158,7 @@ Ball.prototype = {
 	},
 	render: function() {
 		var shiftX = 59, shiftY = 59;
-		if (!this.isDead) {
+		if (!this.isDead && !this.isReadyToStart) {
 			ctx.save();
 			ctx.translate(this.position.x, this.position.y);
 			ctx.rotate(this.shadowAngle);

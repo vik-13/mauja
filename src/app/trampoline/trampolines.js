@@ -3,6 +3,9 @@ function Trampolines() {
 }
 
 Trampolines.prototype = {
+	reset: function() {
+		this.list.length = 0;
+	},
 	add: function(x) {
 		var index, collision,
 			position, start, end, convertedX = x - app.scene.camera.outPosition.x;

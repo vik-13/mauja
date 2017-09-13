@@ -3,6 +3,9 @@ function Objects() {
 }
 
 Objects.prototype = {
+	reset: function() {
+		this.list.length = 0;
+	},
 	add: function(index) {
 		var r = Math.random();
 		if (r < .25) {

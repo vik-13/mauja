@@ -12,6 +12,10 @@ function Hills() {
 }
 
 Hills.prototype = {
+	reset: function() {
+		this.list.length = 0;
+		this.points.length = 0;
+	},
 	next: function() {
 		if (this.list[this.list.length - 1].to.x - this.toEnd < app.ball.position.x) {
 			this.add();

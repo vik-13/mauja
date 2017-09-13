@@ -3,6 +3,9 @@ function Decoration() {
 }
 
 Decoration.prototype = {
+	reset: function() {
+		this.list.length = 0;
+	},
 	add: function(position, house, y) {
 		if (!house) {
 			this.list.push(new Tree(position.add(new Vector(0, y || (-150 + 300 * Math.random())))));

@@ -7,7 +7,15 @@ function Camera() {
 }
 
 Camera.prototype = {
+	reset: function() {
+		this.shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
+		this.position = new Vector();
+		this.outPosition = new Vector();
+		this.velocity = new Vector();
+		this.acceleration = new Vector();
+	},
 	next: function(ball) {
+		this.shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
 		var diff = ball.position.get().sub(this.position);
 		this.acceleration.apply(diff).mult(.1);
 

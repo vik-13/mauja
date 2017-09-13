@@ -3,6 +3,9 @@ function Particles() {
 }
 
 Particles.prototype = {
+	reset: function() {
+		this.list.length = 0;
+	},
 	addForce: function(position, r, amount) {
 		var i, distance, angle;
 		for (i = 0; i < amount; i++) {

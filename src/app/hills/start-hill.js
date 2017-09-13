@@ -12,24 +12,7 @@ function StartHill() {
 
 StartHill.prototype = {
 	addDecoration: function() {
-		// var i = 19, existHouse = Math.random() < 1, houseIndex = 0;
-		//
-		// if (existHouse) {
-		// 	houseIndex = 1 + parseInt(20 * Math.random());
-		// 	app.decoration.add(app.hills.points[app.hills.points.length - houseIndex].position.get(), true);
-		// }
-		//
-		// while (i > 0) {
-		// 	if (Math.random() < .2) {
-		// 		app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
-		// 	}
-		// 	i--;
-		// 	if (houseIndex === i) {
-		// 		i = houseIndex - 5;
-		// 	}
-		// }
-
-
+		console.log('add decorator');
 		app.decoration.add(app.hills.points[3].position.get(), true, 120);
 		app.decoration.add(app.hills.points[6].position.get(), true, 100);
 		app.decoration.add(app.hills.points[4].position.get(), true, 180);

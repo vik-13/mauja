@@ -32,20 +32,38 @@
 		lifeCycle();
 
 		document.addEventListener('mousedown', function(event) {
-			if (!app.ball.isDead) {
-				app.trampolines.add(event.screenX / ratio);
-			} else {
+			if (app.ball.isDead) {
+				console.log('reset');
+				reset()
+			} else if (app.ball.isReadyToStart) {
+				console.log('activate');
 				app.ball.activate();
+			} else {
+				app.trampolines.add(event.screenX / ratio);
 			}
 		});
 
 		document.addEventListener('touchstart', function(event) {
-			if (!app.ball.isDead) {
-				app.trampolines.add(event.touches[0].screenX / ratio);
-			} else {
+			if (app.ball.isDead) {
+				reset()
+			} else if (app.ball.isReadyToStart) {
 				app.ball.activate();
+			} else {
+				app.trampolines.add(event.touches[0].screenX / ratio);
 			}
 		});
+	}
+
+	function reset() {
+		app.scene.camera.reset();
+		app.ball.reset();
+		app.hills.reset();
+		app.trampolines.reset();
+		app.objects.reset();
+		app.particles.reset();
+		app.decoration.reset();
+
+		app.hills.generate();
 	}
 
 	function lifeCycle() {
