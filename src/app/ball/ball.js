@@ -123,7 +123,7 @@ Ball.prototype = {
 								app.particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 30);
 							}
 							if (tramp) {
-								this.velocity.apply(end.get().sub(start).normalize().mult(app.ball.velocity.mag() * 1.005));
+								this.velocity.apply(end.get().sub(start).normalize().mult(app.ball.velocity.mag() * 1.01));
 								} else {
 								this.velocity.apply(reflection);
 							}

@@ -32,6 +32,7 @@ Hills.prototype = {
 	generate: function() {
 		var i;
 		this.list.push(new StartHill());
+		app.rocks.add(this.points.length - parseInt(Math.random() * 20) - 1);
 		this.list.push(new Hill(this.list[this.list.length - 1]));
 		for (i = 0; i < this.momentAmount - 2; i++) {
 			this.add();

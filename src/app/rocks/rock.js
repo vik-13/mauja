@@ -1,7 +1,7 @@
 function Rock(index) {
 	this.position = new Vector(app.hills.points[index].position.x, app.hills.points[index].position.y);
 	this.r = 50;
-	this.halfWidth = 30;
+	this.halfWidth = 62;
 	this.angle = app.hills.points[index].normal.angle() + (Math.PI / 2);
 }
 
