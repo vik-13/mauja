@@ -93,7 +93,7 @@ Scene.prototype = {
 			ctx.font = (fontSize * .26) + 'px Courier New';
 			ctx.textAlign = 'right';
 			ctx.fillStyle = "white";
-			ctx.fillText('Your score is: ' + (app.ball.last * 10) + 'm', 0, 0);
+			ctx.fillText('Your score is: ' + app.ball.last + 'm', 0, 0);
 
 			ctx.font = (fontSize * .26) + 'px Courier New';
 			ctx.textAlign = 'right';
@@ -105,7 +105,7 @@ Scene.prototype = {
 			ctx.font = '24px Courier New';
 			ctx.textAlign = 'left';
 			ctx.fillStyle = "white";
-			ctx.fillText('Score: ' + (app.ball.last * 10) + 'm', 10, 30);
+			ctx.fillText('Score: ' + app.ball.last + 'm', 10, 30);
 			ctx.restore();
 		}
 	}
