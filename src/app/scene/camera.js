@@ -1,5 +1,5 @@
 function Camera() {
-	this.shift = new Vector(200, 300);
+	this.shift = new Vector(app.size.x * .2, (app.size.y / ratio) * .5);
 	this.position = new Vector();
 	this.outPosition = new Vector();
 	this.velocity = new Vector();

@@ -1,6 +1,6 @@
 // w=49 px h=69 px
 function Girl(index) {
-	this.position = new Vector(app.hills.points[index].position.x, app.hills.points[index].position.y - 50);
+	this.position = new Vector(app.hills.points[index].position.x, app.hills.points[index].position.y);
 	this.r = 30;
 	this.halfWidth = 25;
 }
@@ -12,7 +12,7 @@ Girl.prototype = {
 		for (i = 0; i < 2; i++) {
 			ctx.save();
 			ctx.globalAlpha = !i ? 1 : night;
-			ctx.translate(this.position.x, this.position.y);
+			ctx.translate(this.position.x, this.position.y - 50);
 
 			ctx.miterLimit=4;
 			ctx.fillStyle = !i ? '#877755' : '#202B2C';

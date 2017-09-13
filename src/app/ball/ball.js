@@ -2,7 +2,7 @@ function Ball() {
 	this.isDead = false;
 	this.r = 10;
 	this.mass = .2;
-	this.speedLimit = 10 + (this.r - 10) * .1;
+	this.speedLimit = 10 + (this.r - 10) * .2;
 	this.insideSnow = 5;
 
 	this.last = 1;

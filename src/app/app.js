@@ -32,7 +32,7 @@
 		lifeCycle();
 
 		document.addEventListener('click', function(event) {
-			app.trampolines.add(event.screenX);
+			app.trampolines.add(event.screenX / ratio);
 		});
 	}
 
