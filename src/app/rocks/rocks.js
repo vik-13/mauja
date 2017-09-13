@@ -4,7 +4,11 @@ function Rocks() {
 
 Rocks.prototype = {
 	add: function(index) {
-		this.list.push(new Rock(index));
+		if (Math.random() < .5) {
+			this.list.push(new Rock(index));
+		} else {
+			this.list.push(new Fox(index));
+		}
 	},
 	next: function() {
 

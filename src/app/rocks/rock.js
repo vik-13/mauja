@@ -5,9 +5,6 @@ function Rock(index) {
 }
 
 Rock.prototype = {
-	bound: function() {
-
-	},
 	render: function() {
 		var shiftX = -62, shiftY = -46;
 		var i;

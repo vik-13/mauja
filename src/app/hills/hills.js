@@ -25,7 +25,7 @@ Hills.prototype = {
 		} else {
 			this.list.push(new Hill(this.list[this.list.length - 1]));
 		}
-		if (Math.random() <= .2) {
+		if (Math.random() <= 1) {
 			app.rocks.add(this.points.length - parseInt(Math.random() * 20) - 1);
 		}
 	},
