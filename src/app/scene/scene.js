@@ -33,18 +33,6 @@ Scene.prototype = {
 		ctx.fillStyle = gradient;
 		ctx.fillRect(0, 0, app.size.x, app.size.y);
 
-		// ctx.font = "20px Arial";
-		// ctx.fillStyle = "white";
-		// ctx.fillText('speed: ' + parseInt(app.ball.velocity.mag()), 10, 20);
-		//
-		// ctx.font = "20px Arial";
-		// ctx.fillStyle = "white";
-		// ctx.fillText('distance: ' + app.ball.last, 10, 50);
-		//
-		// ctx.font = "20px Arial";
-		// ctx.fillStyle = "white";
-		// ctx.fillText('mass: ' + app.ball.mass.toFixed(2), 10, 80);
-
 		this.sun.render();
 
 		this.mb.r();
@@ -110,7 +98,14 @@ Scene.prototype = {
 			ctx.font = (fontSize * .26) + 'px Courier New';
 			ctx.textAlign = 'right';
 			ctx.fillStyle = "white";
-			ctx.fillText('Click anywhere to go home', 0, 60);
+			ctx.fillText('Click to start again', 0, 60);
+			ctx.restore();
+		}
+		if (!app.ball.isDead && !app.ball.isReadyToStart) {
+			ctx.font = '24px Courier New';
+			ctx.textAlign = 'left';
+			ctx.fillStyle = "white";
+			ctx.fillText('Score: ' + (app.ball.last * 10) + 'm', 10, 30);
 			ctx.restore();
 		}
 	}

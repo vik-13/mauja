@@ -4,4 +4,4 @@ High in the Karpathian mountains two little kids Attu and Juno were playing snow
 
 Keep the snowball rolling to get as far as you can! Click anywhere to set the trampoline to jump over the kids, bears, foxes and the rocks! Be patient at night!
 
-Developed by Viktor and Paul
+Developed by Viktor and Pavlo
