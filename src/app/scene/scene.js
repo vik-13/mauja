@@ -11,6 +11,7 @@ function Scene() {
 
 Scene.prototype = {
 	next: function() {
+		this.mb.next();
 		this.mm.next();
 		this.mf.next();
 		this.lake.next();

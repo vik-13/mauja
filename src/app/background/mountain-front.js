@@ -7,6 +7,7 @@ function MountainFront() {
 // w=1860px, h=1049 px
 MountainFront.prototype = {
 	next: function() {
+		this.scale = app.size.x / 1860;
 		this.position.sub(new Vector(this.speed * app.ball.velocity.x, 0));
 		if (this.position.x <= -app.size.x) {
 			this.position.x = 0;

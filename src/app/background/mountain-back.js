@@ -1,11 +1,13 @@
 function MountainBack() {
     this.sc = app.size.x / 1964;
-    // this.shift = app.canvas.height - this.scale * 664;
     this.sh = 120;
 }
 
 // w=1964 px, h=1285 px
 MountainBack.prototype = {
+    next: function() {
+		this.sc = app.size.x / 1964;
+    },
     r: function () {
         ctx.save();
 

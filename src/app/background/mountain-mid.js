@@ -7,6 +7,7 @@ function MountainMid() {
 // w=1599px  h=1193 px
 MountainMid.prototype = {
     next: function () {
+		this.scale = app.size.x / 1599;
         this.position.sub(new Vector(this.speed * app.ball.velocity.x, 0));
         if (this.position.x <= -app.size.x) {
             this.position.x = 0;

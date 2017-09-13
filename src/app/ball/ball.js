@@ -28,7 +28,7 @@ Ball.prototype = {
 		var friction;
 
 		if (!this.isDead) {
-			this.speedLimit = 10 + (this.r - 10) * .1;
+			this.speedLimit = 10 + (this.r - 10) * .2;
 			friction = this.calculateFriction();
 
 			this.acceleration.add(friction);
