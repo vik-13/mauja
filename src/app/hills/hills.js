@@ -42,15 +42,37 @@ Hills.prototype = {
 		}
 	},
 	render: function() {
-		var i;
+		var i,
+			start = this.list[this.list.length - this.momentAmount],
+			end = this.list[this.list.length - 1];
+
 		ctx.save();
+		bp();
+		ctx.fillStyle = '#E8EFEE';
+		m(start.from.x, start.from.y);
 		for (i = this.list.length - this.momentAmount; i < this.list.length; i++) {
 			this.list[i].render();
 		}
-		for (i = this.list.length - this.momentAmount; i < this.list.length; i++) {
-			this.list[i].renderNight();
-		}
+		l(end.to.x, end.to.y + 2000);
+		l(start.from.x, end.to.y + 2000);
+		l(start.from.x, start.from.y);
+		ctx.fill();
+		cp();
+		ctx.restore();
 
+		ctx.save();
+		ctx.globalAlpha = night;
+		bp();
+		ctx.fillStyle = 'rgb(21, 30, 30)';
+		m(start.from.x, start.from.y);
+		for (i = this.list.length - this.momentAmount; i < this.list.length; i++) {
+			this.list[i].render();
+		}
+		l(end.to.x, end.to.y + 2000);
+		l(start.from.x, end.to.y + 2000);
+		l(start.from.x, start.from.y);
+		ctx.fill();
+		cp();
 		ctx.restore();
 	}
 };

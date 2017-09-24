@@ -12,6 +12,7 @@
 		window.bp = ctx.beginPath.bind(ctx);
 		window.cp = ctx.closePath.bind(ctx);
 
+		window.pause = false;
 		window.res = {x: 1280, y: 800};
 		app.size = {x: window.innerWidth, y: window.innerHeight};
 		window.ratio = app.size.x / res.x;
@@ -26,10 +27,17 @@
 		app.ball = new Ball();
 		app.particles = new Particles();
 		app.decoration = new Decoration();
+		app.texts = new Texts();
 
 		app.hills.generate();
 
 		lifeCycle();
+
+		document.addEventListener('keydown', function(event) {
+			if (event.key === 'p') {
+				window.pause = !window.pause;
+			}
+		});
 
 		document.addEventListener('mousedown', function(event) {
 			if (app.ball.isDead) {
@@ -66,7 +74,9 @@
 	}
 
 	function lifeCycle() {
-		next();
+		if (!pause) {
+			next();
+		}
 		render();
 
 		requestAnimationFrame(lifeCycle);

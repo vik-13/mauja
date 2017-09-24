@@ -58,24 +58,7 @@ Scene.prototype = {
 		app.particles.render();
 		app.decoration.render(false);
 
-		ctx.save();
-		var fontSize = (app.size.x / ratio) * .1;
-		ctx.translate((app.size.x / ratio) - ((app.size.x / ratio) * .07), 200);
-		ctx.font = fontSize + 'px Courier New';
-		ctx.textAlign = 'right';
-		ctx.fillStyle = "white";
-		ctx.fillText('MAUJA', 0, 0);
-
-		ctx.font = (fontSize * .26) + 'px Courier New';
-		ctx.textAlign = 'right';
-		ctx.fillStyle = "white";
-		ctx.fillText('lost snowball story', 0, 42);
-
-		ctx.font = (fontSize * .26) + 'px Courier New';
-		ctx.textAlign = 'right';
-		ctx.fillStyle = "white";
-		ctx.fillText('Click to start', 0, 150);
-		ctx.restore();
+		app.texts.welcome();
 
 		ctx.restore();
 
@@ -86,27 +69,10 @@ Scene.prototype = {
 		ctx.restore();
 
 		if (app.ball.isDead) {
-			ctx.save();
-			fontSize = app.size.x * .1;
-			ctx.translate(app.size.x - (app.size.x * .07), 70);
-
-			ctx.font = (fontSize * .26) + 'px Courier New';
-			ctx.textAlign = 'right';
-			ctx.fillStyle = "white";
-			ctx.fillText('Your score is: ' + app.ball.last + 'm', 0, 0);
-
-			ctx.font = (fontSize * .26) + 'px Courier New';
-			ctx.textAlign = 'right';
-			ctx.fillStyle = "white";
-			ctx.fillText('Click to start again', 0, 60);
-			ctx.restore();
+			app.texts.dead();
 		}
 		if (!app.ball.isDead && !app.ball.isReadyToStart) {
-			ctx.font = '24px Courier New';
-			ctx.textAlign = 'left';
-			ctx.fillStyle = "white";
-			ctx.fillText('Score: ' + app.ball.last + 'm', 10, 30);
-			ctx.restore();
+			app.texts.score()
 		}
 	}
 };

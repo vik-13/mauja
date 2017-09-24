@@ -44,28 +44,6 @@ StartHill.prototype = {
 		}
 	},
 	render: function() {
-		ctx.save();
-		bp();
-		m(this.from.x - 1, this.from.y);
 		ctx.bezierCurveTo(this.c1.x, this.c1.y, this.c2.x, this.c2.y, this.to.x, this.to.y);
-		l(this.to.x, this.to.y + 2000);
-		l(this.from.x - 1, this.from.y + 2000);
-		l(this.from.x - 1, this.from.y);
-		ctx.fillStyle = '#E8EFEE';
-		ctx.fill();
-		ctx.restore();
-	},
-	renderNight: function() {
-		ctx.save();
-		ctx.globalAlpha = night;
-		bp();
-		m(this.from.x - 1, this.from.y);
-		ctx.bezierCurveTo(this.c1.x, this.c1.y, this.c2.x, this.c2.y, this.to.x, this.to.y);
-		l(this.to.x, this.to.y + 2000);
-		l(this.from.x - 1, this.from.y + 2000);
-		l(this.from.x - 1, this.from.y);
-		ctx.fillStyle = 'rgb(21, 30, 30)';
-		ctx.fill();
-		ctx.restore();
 	}
 };
