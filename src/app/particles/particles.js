@@ -41,19 +41,10 @@ Particles.prototype = {
 		}
 	},
 	next: function() {
-		var particlesToRemove = [];
-		this.list.forEach(function(particle) {
+		this.list = this.list.filter(function(particle) {
 			particle.next();
-			if (!particle.isActive) {
-				particlesToRemove.push(particle);
-			}
-		}.bind(this));
-		particlesToRemove.forEach(function(particle) {
-			var index = this.list.indexOf(particle);
-			if (index !== -1) {
-				this.list.splice(index, 1);
-			}
-		}.bind(this));
+			return particle.isActive;
+		});
 	},
 	render: function() {
 		this.list.forEach(function(particle) {

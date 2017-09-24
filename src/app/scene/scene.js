@@ -24,6 +24,8 @@ Scene.prototype = {
 		app.particles.next();
 		app.decoration.next();
 
+		weather.next();
+
 		this.camera.next(app.ball);
 	},
 	render: function() {
@@ -61,6 +63,8 @@ Scene.prototype = {
 		app.texts.welcome();
 
 		ctx.restore();
+
+		weather.render();
 
 		ctx.save();
 		ctx.globalAlpha = .2 * sunset;
