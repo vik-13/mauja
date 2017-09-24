@@ -34,7 +34,7 @@
 		lifeCycle();
 
 		document.addEventListener('keydown', function(event) {
-			if (event.key === 'p') {
+			if (event.keyCode === 80) {
 				window.pause = !window.pause;
 			}
 		});
