@@ -74,7 +74,7 @@ Ball.prototype = {
 			this.position.add(this.velocity);
 			this.acceleration.mult(0);
 
-			app.particles.addForce(this.position, this.r, this.velocity.mag());
+			app.particles.addForce(this.position, this.r, parseInt(this.velocity.mag()));
 
 			this.r = this.r >= 70 ? 70 : this.r + 0.01;
 			this.mass = .2 + (this.r / 700);

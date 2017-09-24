@@ -48,9 +48,7 @@ Particles.prototype = {
 	},
 	render: function() {
 		this.list.forEach(function(particle) {
-			if (particle.isActive) {
-				particle.render();
-			}
+			particle.render();
 		});
 	}
 };
