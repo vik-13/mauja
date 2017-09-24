@@ -1,6 +1,6 @@
 function Sun() {
 	this.position = new Vector();
-	this.angle = 0;
+	this.angle = Math.PI;
 	this.speed = .001;
 	this.day = true;
 	this.part = Math.cos(this.angle);
