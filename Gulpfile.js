@@ -3,6 +3,8 @@ var config = require('./gulp.config')();
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+	zip = require('gulp-zip'),
+	size = require('gulp-size'),
     inject = require('gulp-inject'),
     del = require('del'),
     browserSync = require('browser-sync').create();
@@ -10,8 +12,9 @@ var gulp = require('gulp'),
 gulp.task('clean', clean);
 gulp.task('compile', compile);
 gulp.task('compile-watch', ['build'], compileWatch);
-gulp.task('build', ['clean'], compile);
+gulp.task('build', ['clean', 'compile'], buildZip);
 gulp.task('serve', ['build'],  serve);
+gulp.task('zip', buildZip);
 
 gulp.task('default', ['build']);
 
@@ -64,12 +67,19 @@ function buildScripts() {
 
 function buildStyles() {
     return gulp.src(config.sources.stylesheets)
-        //.pipe(concat('app.css'))
+        .pipe(concat('app.css'))
         .pipe(gulp.dest(config.release.stylesheets));
 }
 
+function buildZip() {
+	return gulp.src(config.release.index + '/**/*')
+		.pipe(zip('mauja.zip'))
+		.pipe(gulp.dest(''))
+		.pipe(size({
+			pretty: false
+		}));
+}
 
 function handleError(err) {
-	console.log(err.toString());
 	this.emit('end');
 }
