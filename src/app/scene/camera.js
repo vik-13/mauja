@@ -1,26 +1,31 @@
-function Camera() {
-	this.shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
-	this.position = new Vector();
-	this.outPosition = new Vector();
-	this.velocity = new Vector();
-	this.acceleration = new Vector();
-}
+window.camera = (function() {
+	var shift, position, outPosition, velocity, acceleration;
 
-Camera.prototype = {
-	reset: function() {
-		this.shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
-		this.position = new Vector();
-		this.outPosition = new Vector();
-		this.velocity = new Vector();
-		this.acceleration = new Vector();
-	},
-	next: function(ball) {
-		this.shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
-		var diff = ball.position.get().sub(this.position);
-		this.acceleration.apply(diff).mult(.1);
-
-		this.velocity.add(this.acceleration);
-		this.position.apply(this.velocity);
-		this.outPosition.apply(new Vector(-this.position.x + this.shift.x, -this.position.y  + this.shift.y));
+	function getFinal() {
+		return outPosition;
 	}
-};
+
+	function next() {
+		shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
+		var diff = app.ball.position.get().sub(position);
+		acceleration.apply(diff).mult(.1);
+
+		velocity.add(acceleration);
+		position.apply(velocity);
+		outPosition.apply(new Vector(-position.x + shift.x, -position.y  + shift.y));
+	}
+
+	function reset() {
+		shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
+		position = new Vector();
+		outPosition = new Vector();
+		velocity = new Vector();
+		acceleration = new Vector();
+	}
+
+	return {
+		getFinal: getFinal,
+		next: next,
+		reset: reset
+	};
+})();

@@ -21,7 +21,7 @@ Hills.prototype = {
 			this.add();
 		}
 
-		this.color = app.scene.sun.day ? '#E8EFEE' : 'rgb(21, 30, 30)';
+		this.color = sun.time.day ? '#E8EFEE' : 'rgb(21, 30, 30)';
 	},
 	add: function() {
 		if (!(this.list[this.list.length - 1] instanceof Glade) &&Math.random() < .4) {

@@ -20,7 +20,6 @@
 		app.canvas.height = app.size.y;
 
 		app.gravity = (new Gravity()).gravity;
-		app.scene = new Scene();
 		app.trampolines = new Trampolines();
 		app.objects = new Objects();
 		app.hills = new Hills();
@@ -28,6 +27,10 @@
 		app.particles = new Particles();
 		app.decoration = new Decoration();
 		app.texts = new Texts();
+
+		scene.init();
+
+		mountains.init();
 
 		app.hills.generate();
 
@@ -62,7 +65,7 @@
 	}
 
 	function reset() {
-		app.scene.camera.reset();
+		camera.reset();
 		app.ball.reset();
 		app.hills.reset();
 		app.trampolines.reset();
@@ -83,14 +86,14 @@
 	}
 
 	function next() {
-		window.night = !app.scene.sun.day && Math.abs(app.scene.sun.part) >= .8 ?
-			((1 - Math.abs(app.scene.sun.part)) / .2) : !app.scene.sun.day ? 1 : 0;
-		window.sunset = Math.abs(app.scene.sun.part) > .8 ? ((Math.abs(app.scene.sun.part) - .8) / .2) : 0;
-		app.scene.next();
+		window.night = !sun.time.day && Math.abs(sun.time.part) >= .8 ?
+			((1 - Math.abs(sun.time.part)) / .2) : !sun.time.day ? 1 : 0;
+		window.sunset = Math.abs(sun.time.part) > .8 ? ((Math.abs(sun.time.part) - .8) / .2) : 0;
+		scene.next();
 	}
 
 	function render() {
-		app.scene.render();
+		scene.render();
 	}
 
 	function resize() {

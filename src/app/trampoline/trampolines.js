@@ -8,7 +8,7 @@ Trampolines.prototype = {
 	},
 	add: function(x) {
 		var index, collision,
-			position, start, end, convertedX = x - app.scene.camera.outPosition.x;
+			position, start, end, convertedX = x - camera.getFinal().x;
 
 		if (this.list.length) {
 			this.list[0].deactivate();

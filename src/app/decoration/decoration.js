@@ -19,7 +19,7 @@ Decoration.prototype = {
 	next: function() {
 		var particlesToRemove = [];
 		this.list.forEach(function(tree) {
-			if (tree.position.x + app.scene.camera.outPosition.x < -300) {
+			if (tree.position.x + camera.getFinal().x < -300) {
 				particlesToRemove.push(tree);
 			}
 		}.bind(this));

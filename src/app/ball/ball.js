@@ -78,7 +78,7 @@ Ball.prototype = {
 
 			this.r = this.r >= 70 ? 70 : this.r + 0.01;
 			this.mass = .2 + (this.r / 700);
-			this.shadowAngle = app.scene.sun.position.get().sub(this.position.get().add(app.scene.camera.outPosition)).angle() + 1;
+			this.shadowAngle = sun.get().get().sub(this.position.get().add(camera.getFinal())).angle() + 1;
 		} else {
 			//TODO: implementing dead
 		}

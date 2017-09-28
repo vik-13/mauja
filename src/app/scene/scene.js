@@ -1,21 +1,12 @@
-function Scene() {
-	this.camera = new Camera();
+window.scene = (function() {
+	function init() {
+		sun.init();
+		camera.reset();
+	}
 
-	this.mb = new MountainBack();
-	this.mm = new MountainMid();
-	this.mf = new MountainFront();
-
-	this.lake = new Lake();
-	this.sun = new Sun();
-}
-
-Scene.prototype = {
-	next: function() {
-		this.mb.next();
-		this.mm.next();
-		this.mf.next();
-		this.lake.next();
-		this.sun.next();
+	function next() {
+		mountains.next();
+		sun.next();
 
 		app.hills.next();
 		app.ball.next();
@@ -26,22 +17,19 @@ Scene.prototype = {
 
 		weather.next();
 
-		this.camera.next(app.ball);
-	},
-	render: function() {
+		camera.next();
+	}
+
+	function render() {
 		var gradient = ctx.createLinearGradient(0, 0, 0, app.size.y);
 		gradient.addColorStop(0, '#B9DCEC');
 		gradient.addColorStop(.5, '#E4EBD8');
 		ctx.fillStyle = gradient;
 		ctx.fillRect(0, 0, app.size.x, app.size.y);
 
-		this.sun.render();
+		sun.render();
 
-		this.mb.r();
-		this.mm.r();
-		this.mf.r();
-
-		this.lake.r();
+		mountains.render();
 
 		ctx.save();
 		ctx.globalAlpha = .6 * night;
@@ -50,8 +38,9 @@ Scene.prototype = {
 		ctx.restore();
 
 		ctx.save();
+		//ctx.scale(ratio * (1 - app.ball.velocity.mag() * .02), ratio * (1 - app.ball.velocity.mag() * .02));
 		ctx.scale(ratio, ratio);
-		ctx.translate(this.camera.outPosition.x, this.camera.outPosition.y);
+		ctx.translate(camera.getFinal().x, camera.getFinal().y);
 		app.decoration.render(true);
 		app.hills.render();
 		app.objects.render();
@@ -79,4 +68,10 @@ Scene.prototype = {
 			app.texts.score()
 		}
 	}
-};
+
+	return {
+		init: init,
+		next: next,
+		render: render
+	};
+})();
