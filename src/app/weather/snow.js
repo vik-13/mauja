@@ -13,7 +13,7 @@ Snow.prototype = {
 				active: true,
 				acceleration: new Vector(),
 				velocity: new Vector(),
-				position: new Vector((1.5 * app.size.x) * Math.random(), 0),
+				position: new Vector((1.5 * app.size.x) * Math.random(), -50),
 				r: 2 + parseInt(10 * Math.random())
 			};
 			if (Math.random() < this.posibility) {

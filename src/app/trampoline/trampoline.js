@@ -2,7 +2,7 @@ function Trampoline(position, index) {
 	this.HEIGHT = 45;
 	this.WIDTH = 90;
 	this.position = position.get();
-	this.normal = app.hills.points[index].normal.get();
+	this.normal = map.getBound(index).normal.get();
 	this.angle = this.normal.angle() + (Math.PI / 2);
 	this.points = [];
 

@@ -8,12 +8,12 @@ window.scene = (function() {
 		mountains.next();
 		sun.next();
 
-		app.hills.next();
+		map.next();
 		app.ball.next();
 		app.objects.next();
 		app.trampolines.next();
 		app.particles.next();
-		app.decoration.next();
+		decorations.next();
 
 		weather.next();
 
@@ -41,13 +41,16 @@ window.scene = (function() {
 		//ctx.scale(ratio * (1 - app.ball.velocity.mag() * .02), ratio * (1 - app.ball.velocity.mag() * .02));
 		ctx.scale(ratio, ratio);
 		ctx.translate(camera.getFinal().x, camera.getFinal().y);
-		app.decoration.render(true);
-		app.hills.render();
+
+		decorations.render(true);
+
+		map.render();
 		app.objects.render();
 		app.ball.render();
 		app.trampolines.render();
 		app.particles.render();
-		app.decoration.render(false);
+
+		decorations.render(false);
 
 		app.texts.welcome();
 

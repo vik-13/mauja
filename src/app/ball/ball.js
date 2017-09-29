@@ -108,7 +108,7 @@ Ball.prototype = {
 	},
 	collision: function() {
 		var detectedFirst = false, index = this.last, normal,
-			points = app.hills.points, start, end, middle, reflection, distance, angle,
+			points = map.getBound(), start, end, middle, reflection, distance, angle,
 			tramp = this.checkTrampoline();
 		while (!detectedFirst) {
 			if (this.position.x < points[index - 1].position.x && !tramp) {

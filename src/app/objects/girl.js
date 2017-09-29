@@ -1,6 +1,6 @@
 // w=49 px h=69 px
 function Girl(index) {
-	this.position = new Vector(app.hills.points[index].position.x, app.hills.points[index].position.y);
+	this.position = new Vector(map.getBound(index).position.x, map.getBound(index).position.y);
 	this.r = 30;
 	this.halfWidth = 25;
 }

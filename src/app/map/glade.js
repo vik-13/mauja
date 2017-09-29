@@ -20,12 +20,12 @@ Glade.prototype = {
 
 		if (existHouse) {
 			houseIndex = 1 + parseInt(20 * Math.random());
-			app.decoration.add(app.hills.points[app.hills.points.length - houseIndex].position.get(), true);
+			decorations.addHouse(map.getBound(map.getBound().length - houseIndex).position.get().add(new Vector(0, (100 + 100 * Math.random()))));
 		}
 
 		while (i > 0) {
 			if (Math.random() < .3) {
-				app.decoration.add(app.hills.points[app.hills.points.length - i].position.get());
+				decorations.addTree(map.getBound(map.getBound().length - i).position.get().add(new Vector(0, (-150 + 300 * Math.random()))));
 			}
 			i--;
 			if (houseIndex === i) {
@@ -34,7 +34,7 @@ Glade.prototype = {
 		}
 	},
 	bound: function() {
-		var i, accuracy = 20, points = app.hills.points, point;
+		var i, accuracy = 20, points = map.getBound(), point;
 
 		for (i = 1; i <= accuracy; i++) {
 			point = {};

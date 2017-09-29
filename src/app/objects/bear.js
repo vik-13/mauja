@@ -1,8 +1,8 @@
 function Bear(index) {
-	this.position = new Vector(app.hills.points[index].position.x, app.hills.points[index].position.y);
+	this.position = new Vector(map.getBound(index).position.x, map.getBound(index).position.y);
 	this.r = 30;
 	this.halfWidth = 52;
-	this.angle = app.hills.points[index].normal.angle() + (Math.PI / 2);
+	this.angle = map.getBound(index).normal.angle() + (Math.PI / 2);
 }
 
 Bear.prototype = {

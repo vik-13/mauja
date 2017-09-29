@@ -16,16 +16,16 @@ Trampolines.prototype = {
 		}
 
 		index = this.searchIndex(convertedX);
-		start = app.hills.points[index].position;
-		end = app.hills.points[index + 1].position;
+		start = map.getBound(index).position;
+		end = map.getBound(index + 1).position;
 		position = new Vector(convertedX, start.y + ((convertedX - start.x) / (end.x - start.x)) * (end.y - start.y));
 
 		collision = this.check(position);
 		if (collision) {
 			convertedX = collision - 90;
 			index = this.searchIndex(convertedX);
-			start = app.hills.points[index].position;
-			end = app.hills.points[index + 1].position;
+			start = map.getBound(index).position;
+			end = map.getBound(index + 1).position;
 			position = new Vector(convertedX, start.y + ((convertedX - start.x) / (end.x - start.x)) * (end.y - start.y));
 		}
 
@@ -44,7 +44,7 @@ Trampolines.prototype = {
 	searchIndex: function(x) {
 		var found = false, i = app.ball.last;
 		while (!found) {
-			if (x <= app.hills.points[i].position.x) {
+			if (x <= map.getBound(i).position.x) {
 				found = true;
 				i--;
 			} else {

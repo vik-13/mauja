@@ -22,17 +22,15 @@
 		app.gravity = (new Gravity()).gravity;
 		app.trampolines = new Trampolines();
 		app.objects = new Objects();
-		app.hills = new Hills();
 		app.ball = new Ball();
 		app.particles = new Particles();
-		app.decoration = new Decoration();
 		app.texts = new Texts();
 
 		scene.init();
 
 		mountains.init();
 
-		app.hills.generate();
+		map.init();
 
 		lifeCycle();
 
@@ -48,7 +46,7 @@
 			} else if (app.ball.isReadyToStart) {
 				app.ball.activate();
 			} else {
-				app.trampolines.add(event.screenX / ratio);
+				app.trampolines.add(event.pageX / ratio);
 			}
 		});
 
@@ -59,7 +57,7 @@
 			} else if (app.ball.isReadyToStart) {
 				app.ball.activate();
 			} else {
-				app.trampolines.add(event.touches[0].screenX / ratio);
+				app.trampolines.add(event.touches[0].pageX / ratio);
 			}
 		});
 	}
@@ -67,13 +65,13 @@
 	function reset() {
 		camera.reset();
 		app.ball.reset();
-		app.hills.reset();
+		map.reset();
 		app.trampolines.reset();
 		app.objects.reset();
 		app.particles.reset();
-		app.decoration.reset();
+		decorations.reset();
 
-		app.hills.generate();
+		map.init();
 	}
 
 	function lifeCycle() {
