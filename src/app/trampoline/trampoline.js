@@ -7,12 +7,12 @@ function Trampoline(position, index) {
 	this.points = [];
 
 	this.bound();
-	app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 100, 20);
+	particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 100, 20);
 }
 
 Trampoline.prototype = {
 	deactivate: function() {
-		app.particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 100, 20);
+		particles.addDrop(this.position.get().add(new Vector(this.WIDTH / 2, -this.HEIGHT / 2)), 100, 20);
 	},
 	bound: function() {
 		var normal, secondPoint;

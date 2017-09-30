@@ -1,29 +1,42 @@
-function Objects() {
-	this.list = [];
-}
+window.objects = (function() {
+	var list = [];
 
-Objects.prototype = {
-	reset: function() {
-		this.list.length = 0;
-	},
-	add: function(index) {
+	function add(index) {
 		var r = Math.random();
 		if (r < .25) {
-			this.list.push(new Rock(index));
+			list.push(new Rock(index));
 		} else if (r < .5) {
-			this.list.push(new Fox(index));
+			list.push(new Fox(index));
 		} else if (r < .75) {
-			this.list.push(new Bear(index));
+			list.push(new Bear(index));
 		} else {
-			this.list.push(new Girl(index));
+			list.push(new Girl(index));
 		}
-	},
-	next: function() {
+	}
 
-	},
-	render: function() {
-		this.list.forEach(function(item) {
+	function get() {
+		return list;
+	}
+
+	function next() {
+
+	}
+
+	function render() {
+		list.forEach(function(item) {
 			item.render();
 		});
 	}
-};
+
+	function reset() {
+		list.length = 0;
+	}
+
+	return {
+		add: add,
+		get: get,
+		next: next,
+		render: render,
+		reset: reset
+	};
+})();

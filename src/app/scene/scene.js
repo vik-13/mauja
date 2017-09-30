@@ -10,9 +10,9 @@ window.scene = (function() {
 
 		map.next();
 		app.ball.next();
-		app.objects.next();
-		app.trampolines.next();
-		app.particles.next();
+		objects.next();
+		trampolines.next();
+		particles.next();
 		decorations.next();
 
 		weather.next();
@@ -45,10 +45,10 @@ window.scene = (function() {
 		decorations.render(true);
 
 		map.render();
-		app.objects.render();
+		objects.render();
 		app.ball.render();
-		app.trampolines.render();
-		app.particles.render();
+		trampolines.render();
+		particles.render();
 
 		decorations.render(false);
 

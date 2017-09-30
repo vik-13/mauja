@@ -1,47 +1,52 @@
-function Trampolines() {
-	this.list = [];
-}
+window.trampolines = (function() {
+	var list = [];
 
-Trampolines.prototype = {
-	reset: function() {
-		this.list.length = 0;
-	},
-	add: function(x) {
+	function reset() {
+		list.length = 0;
+	}
+
+	function add(x) {
 		var index, collision,
 			position, start, end, convertedX = x - camera.getFinal().x;
 
-		if (this.list.length) {
-			this.list[0].deactivate();
-			this.list.length = 0;
+		if (list.length) {
+			list[0].deactivate();
+			list.length = 0;
 		}
 
-		index = this.searchIndex(convertedX);
+		index = searchIndex(convertedX);
 		start = map.getBound(index).position;
 		end = map.getBound(index + 1).position;
 		position = new Vector(convertedX, start.y + ((convertedX - start.x) / (end.x - start.x)) * (end.y - start.y));
 
-		collision = this.check(position);
+		collision = check(position);
 		if (collision) {
 			convertedX = collision - 90;
-			index = this.searchIndex(convertedX);
+			index = searchIndex(convertedX);
 			start = map.getBound(index).position;
 			end = map.getBound(index + 1).position;
 			position = new Vector(convertedX, start.y + ((convertedX - start.x) / (end.x - start.x)) * (end.y - start.y));
 		}
 
-		this.list.push(new Trampoline(position, index));
-	},
-	check: function(position) {
+		list.push(new Trampoline(position, index));
+	}
+
+	function check(position) {
 		var found = false, x = 0;
-		app.objects.list.forEach(function(item) {
+		objects.get().forEach(function(item) {
 			if (item.position.distance(position) < (item.r + 90)) {
 				found = true;
 				x = item.position.x - item.halfWidth;
 			}
 		});
 		return found && x;
-	},
-	searchIndex: function(x) {
+	}
+
+	function get() {
+		return list;
+	}
+
+	function searchIndex(x) {
 		var found = false, i = app.ball.last;
 		while (!found) {
 			if (x <= map.getBound(i).position.x) {
@@ -52,11 +57,25 @@ Trampolines.prototype = {
 			}
 		}
 		return i;
-	},
-	next: function() {},
-	render: function() {
-		this.list.forEach(function(trampoline) {
+	}
+
+	function next() {
+
+	}
+
+	function render() {
+		list.forEach(function(trampoline) {
 			trampoline.render();
 		});
 	}
-};
+
+	return {
+		reset: reset,
+		add: add,
+		check: check,
+		get: get,
+		searchIndex: searchIndex,
+		next: next,
+		render: render
+	};
+})();

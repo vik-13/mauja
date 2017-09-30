@@ -21,7 +21,7 @@ window.map = (function() {
 			list.push(new Hill(list[list.length - 1]));
 		}
 		if (Math.random() <= .8) {
-			app.objects.add(points.length - parseInt(Math.random() * 20) - 1);
+			objects.add(points.length - parseInt(Math.random() * 20) - 1);
 		}
 	}
 

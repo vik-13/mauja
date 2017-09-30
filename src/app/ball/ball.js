@@ -52,7 +52,7 @@ Ball.prototype = {
 			friction = this.calculateFriction();
 
 			this.acceleration.add(friction);
-			this.acceleration.add(app.gravity.get().mult(this.mass));
+			this.acceleration.add(gravity.get().mult(this.mass));
 
 			this.velocity.add(this.acceleration);
 
@@ -74,7 +74,7 @@ Ball.prototype = {
 			this.position.add(this.velocity);
 			this.acceleration.mult(0);
 
-			app.particles.addForce(this.position, this.r, parseInt(this.velocity.mag()));
+			particles.addForce(this.position, this.r, parseInt(this.velocity.mag()));
 
 			this.r = this.r >= 70 ? 70 : this.r + 0.01;
 			this.mass = .2 + (this.r / 700);
@@ -88,7 +88,7 @@ Ball.prototype = {
 	},
 	checkTrampoline: function() {
 		var currentTramp = false;
-		app.trampolines.list.forEach(function(tramp) {
+		trampolines.get().forEach(function(tramp) {
 			if (tramp.points[0].position.x <= this.position.x && tramp.points[1].position.x >= this.position.x) {
 				currentTramp = tramp;
 			}
@@ -96,11 +96,11 @@ Ball.prototype = {
 		return currentTramp;
 	},
 	itemCollision: function() {
-		app.objects.list.forEach(function(item) {
+		objects.get().forEach(function(item) {
 			if (item.position.distance(this.position) <= item.r + this.r) {
 				this.isDead = true;
 				this.deadTime = (new Date()).getTime();
-				app.particles.addRockCollision(this.position, this.r, 100);
+				particles.addRockCollision(this.position, this.r, 100);
 				this.velocity.apply(new Vector());
 				this.deactivate();
 			}
@@ -141,7 +141,7 @@ Ball.prototype = {
 						if (angle > Math.abs(Math.PI / 2)) {
 							reflection = this.velocity.get().sub(normal.get().mult(1.3 * this.velocity.get().dot(normal)));
 							if (this.velocity.y > 9) {
-								app.particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 30);
+								particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 30);
 							}
 							if (tramp) {
 								this.velocity.apply(end.get().sub(start).normalize().mult(app.ball.velocity.mag() * 1.01));

@@ -27,8 +27,7 @@ Snow.prototype = {
 		}
 		this.list.forEach(function(flake) {
 			flake.acceleration.add(flake.velocity.get().normalize().mult(0.001));
-			flake.acceleration.add(app.gravity.get().mult(flake.m * flake.r * .1));
-			//flake.acceleration.sub(new Vector(app.ball.velocity.x * .0001 * flake.r, 0));
+			flake.acceleration.add(gravity.get().mult(flake.m * flake.r * .1));
 			flake.velocity.add(flake.acceleration);
 			flake.position.add(flake.velocity);
 			flake.position.sub(new Vector(app.ball.velocity.x * .025 * flake.r, 0));

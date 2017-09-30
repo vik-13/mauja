@@ -21,7 +21,7 @@ Particle.prototype = {
 	},
 	next: function() {
 		this.acceleration.add(this.calculateFriction());
-		this.acceleration.add(app.gravity.get().mult(this.mass));
+		this.acceleration.add(gravity.get().mult(this.mass));
 
 		this.velocity.add(this.acceleration);
 		this.position.add(this.velocity);

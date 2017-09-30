@@ -19,11 +19,8 @@
 		app.canvas.width = app.size.x;
 		app.canvas.height = app.size.y;
 
-		app.gravity = (new Gravity()).gravity;
-		app.trampolines = new Trampolines();
-		app.objects = new Objects();
+		window.gravity = new Vector(0, .8);
 		app.ball = new Ball();
-		app.particles = new Particles();
 		app.texts = new Texts();
 
 		scene.init();
@@ -46,7 +43,7 @@
 			} else if (app.ball.isReadyToStart) {
 				app.ball.activate();
 			} else {
-				app.trampolines.add(event.pageX / ratio);
+				trampolines.add(event.pageX / ratio);
 			}
 		});
 
@@ -57,7 +54,7 @@
 			} else if (app.ball.isReadyToStart) {
 				app.ball.activate();
 			} else {
-				app.trampolines.add(event.touches[0].pageX / ratio);
+				trampolines.add(event.touches[0].pageX / ratio);
 			}
 		});
 	}
@@ -66,9 +63,9 @@
 		camera.reset();
 		app.ball.reset();
 		map.reset();
-		app.trampolines.reset();
-		app.objects.reset();
-		app.particles.reset();
+		trampolines.reset();
+		objects.reset();
+		particles.reset();
 		decorations.reset();
 
 		map.init();
