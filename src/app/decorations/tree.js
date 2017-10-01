@@ -1,6 +1,6 @@
-function Tree(position) {
+function Tree(position, front) {
 	this.position = position;
-	this.back = Math.random() < .5;
+	this.back = front ? false : Math.random() < .5;
 }
 
 Tree.prototype = {

@@ -16,10 +16,7 @@ StartHill.prototype = {
 		decorations.addHouse(map.getBound(6).position.get().add(new Vector(0, 100)));
 		decorations.addHouse(map.getBound(4).position.get().add(new Vector(0, 180)));
 		decorations.addHouse(map.getBound(9).position.get().add(new Vector(0, 180)));
-
-		decorations.addTree(map.getBound(1).position.get().add(new Vector(0, 100)));
-		decorations.addTree(map.getBound(2).position.get().add(new Vector(0, 200)));
-		decorations.addTree(map.getBound(3).position.get().add(new Vector(0, 250)));
+		decorations.addTree(map.getBound(2).position.get().add(new Vector(0, 150)), true);
 
 		decorations.addCustom(new Girl(3));
 		decorations.addCustom(new Girl(5));

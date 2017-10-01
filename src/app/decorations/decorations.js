@@ -9,8 +9,8 @@ window.decorations = (function() {
 		list.push(new House(position));
 	}
 
-	function addTree(position) {
-		list.push(new Tree(position));
+	function addTree(position, front) {
+		list.push(new Tree(position, front || false));
 	}
 
 	function reset() {

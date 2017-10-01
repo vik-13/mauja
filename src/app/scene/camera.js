@@ -7,7 +7,9 @@ window.camera = (function() {
 
 	function next() {
 		shift = new Vector(app.size.x * .12, (app.size.y / ratio) * .5);
-		acceleration.apply(app.ball.position.get().sub(position)).mult(.1);
+		acceleration.apply(app.ball.position.get().sub(position));
+		acceleration.x *= .1;
+		acceleration.y *= .07;
 
 		velocity.add(acceleration);
 		position.apply(velocity);

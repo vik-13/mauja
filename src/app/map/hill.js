@@ -1,8 +1,9 @@
-function Hill(last) {
-	var distanceRange = [1500, 3000],
-		vDiff = parseInt(300 + (500 * Math.random())),
+function Hill(last, glade) {
+	var distanceRange = glade ? [1400, 2000] : [1500, 3000],
+		vDiff = glade ? parseInt(50 + (100 * Math.random())) : parseInt(300 + (500 * Math.random())),
 		hDiff = distanceRange[0] + Math.floor(Math.random() * (distanceRange[1] - distanceRange[0]));
 
+	this.glade = glade;
 	this.from = last.to.get().add(new Vector(0, 0));
 	this.to = new Vector(this.from.x + hDiff, this.from.y + vDiff);
 
@@ -10,7 +11,6 @@ function Hill(last) {
 	this.c2 = this.to.get().sub(new Vector(hDiff * (.3 + Math.random() * .2), 0));
 
 	this.bound();
-
 	this.addDecoration();
 }
 
