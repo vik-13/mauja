@@ -140,7 +140,7 @@ Ball.prototype = {
 						angle = normal.angle(this.velocity.get().normalize());
 						if (angle > Math.abs(Math.PI / 2)) {
 							reflection = this.velocity.get().sub(normal.get().mult(1.3 * this.velocity.get().dot(normal)));
-							if (this.velocity.y > 9) {
+							if (this.velocity.y > 7) {
 								particles.addDrop(this.position.get().add(new Vector(0, this.r)), this.r, 30);
 							}
 							if (tramp) {

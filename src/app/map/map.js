@@ -15,11 +15,7 @@ window.map = (function() {
 	}
 
 	function add() {
-		// if (!(list[list.length - 1] instanceof Glade) && Math.random() < .4) {
-		// 	list.push(new Glade(list[list.length - 1]));
-		// } else {
-			list.push(new Hill(list[list.length - 1], !list[list.length - 1].glade && Math.random() < .4));
-		//}
+		list.push(new Hill(list[list.length - 1], !list[list.length - 1].glade && Math.random() < .4));
 		if (Math.random() <= .8) {
 			objects.add(points.length - parseInt(Math.random() * 20) - 1);
 		}

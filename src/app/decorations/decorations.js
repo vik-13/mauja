@@ -21,7 +21,6 @@ window.decorations = (function() {
 		list = list.filter(function(decor) {
 			return decor.position.x + camera.getFinal().x >= -300;
 		});
-		console.log(list.length);
 	}
 
 	function render(back) {
